@@ -27,4 +27,6 @@ if __name__ == '__main__':
     except Exception, err:
         # print Exception, err
         print "USAGE: mM.py [input_file] [output_file]"
+        print "If you entered everything correctly, there is some problem with"
+        print "either file encoding or this code."
         # print "You entered: " + " ".join(sys.argv)
