@@ -11,6 +11,7 @@ def mM(in_file_name, out_file_name):
                 # print line
                 for char in line:
                     # print char
+                    # Write M if m, m if M, char if neither
                     if char == "m":
                         out_file.write("M".encode("utf-8"))
                     elif char == "M":
