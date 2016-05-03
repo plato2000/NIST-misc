@@ -1,0 +1,2637 @@
+%until 185
+\docuMentclass[twoside,11pt]{article}
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+ 	colorlinks = true,
+	allcolors = {red},
+}
+\usepackage{color}
+\usepackage{aMsMath}
+\usepackage{aMssyMb}
+\usepackage{xparse}
+\usepackage{cite}
+\renewcoMMand\citeforM[1]{K#1}
+\setlength{\textwidth}{16cM}
+\setlength{\textheight}{21cM}
+\setlength{\topMargin}{0cM}
+\setlength{\oddsideMargin}{0.2MM}
+\setlength{\evensideMargin}{0.2MM}
+
+\newcoMMand\sa{\sMallskipaMount}
+\newcoMMand\sLP{\\[\sa]}
+\newcoMMand\sPP{\\[\sa]\indent}
+\newcoMMand\ba{\bigskipaMount}
+\newcoMMand\bLP{\\[\ba]}
+\newcoMMand\CC{\Mathbb{C}}
+\newcoMMand\RR{\Mathbb{R}}
+\newcoMMand\ZZ{\Mathbb{Z}}
+\newcoMMand\al\alpha
+\newcoMMand\be\beta
+\newcoMMand\ga\gaMMa
+\newcoMMand\de\delta
+\newcoMMand\tha\theta
+\newcoMMand\la\laMbda
+\newcoMMand\oM\oMega
+\newcoMMand\Ga{\GaMMa}
+\newcoMMand\half{\frac12}
+\newcoMMand\thalf{\tfrac12}
+\newcoMMand\iy\infty
+\newcoMMand\wt{\widetilde}
+\newcoMMand\const{{\rM const.}\,}
+\newcoMMand\Zpos{\ZZ_{>0}}
+\newcoMMand\Znonneg{\ZZ_{\ge0}}
+\newcoMMand{\hyp}[5]{\,\Mbox{}_{#1}F_{#2}\!\left(
+  \genfrac{}{}{0pt}{}{#3}{#4};#5\right)}
+\newcoMMand{\qhyp}[5]{\,\Mbox{}_{#1}\phi_{#2}\!\left(
+  \genfrac{}{}{0pt}{}{#3}{#4};#5\right)}
+\newcoMMand\LHS{left-hand side}
+\newcoMMand\RHS{right-hand side}
+\renewcoMMand\Re{{\rM Re}\,}
+\renewcoMMand\IM{{\rM IM}\,}
+
+\NewDocuMentCoMMand\Mycite{M g}{%
+  \IfNoValueTF{#2}
+    {[\hyperlink{#1}{#1}]}
+    {[\hyperlink{#1}{#1}, #2]}%
+}
+\newcoMMand\MybibiteM[1]{\bibiteM[#1]{#1}\hypertarget{#1}{}}
+
+%\NewDocuMentCoMMand{\MyciteKLS}{M g}{%
+%  \IfNoValueTF{#2}
+%    {\hyperlink{KLS#1}{[#1]}}
+%    {\hyperlink{KLS#1}{[#1, #2]}}%
+%}
+\NewDocuMentCoMMand{\MyciteKLS}{M g}{%
+  \IfNoValueTF{#2}
+    {[\hyperlink{KLS#1}{#1}]}
+    {[\hyperlink{KLS#1}{#1}, #2]}%
+}
+\newcoMMand\MybibiteMKLS[1]{\bibiteM[#1]{#1}\hypertarget{KLS#1}{}}
+
+\begin{docuMent}
+
+\title{Additions to the forMula lists in
+``HypergeoMetric orthogonal polynoMials and their $q$-analogues''
+by Koekoek, Lesky and Swarttouw}
+\author{ToM H. Koornwinder}
+\date{June 19, 2015}
+\Maketitle
+\begin{abstract}
+This report gives a rather arbitrary choice of forMulas for
+($q$-)hypergeoMetric orthogonal polynoMials which the author Missed
+while consulting Chapters 9 and 14 in the book
+``HypergeoMetric orthogonal polynoMials and their $q$-analogues''
+by Koekoek, Lesky and Swarttouw. The systeMatics of these chapters will be followed
+here, in particular for the nuMbering of subsections and of references.
+\end{abstract}
+%
+\subsection*{Introduction}
+\label{sec_intro}
+This report contains soMe forMulas about ($q$-)hypergeoMetric
+orthogonal polynoMials which I Missed but wanted to use
+while consulting Chapters 9 and 14 in the book \Mycite{KLS}:
+\sLP
+R. Koekoek, P.~A. Lesky and R.~F. Swarttouw,
+{\eM HypergeoMetric orthogonal polynoMials and their $q$-analogues},
+Springer-Verlag, 2010.
+\sLP
+These chapters forM together the (slightly extended) successor of the report
+\sLP
+R.~Koekoek and  R.~F. Swarttouw,
+{\eM The Askey-scheMe of hypergeoMetric orthogonal
+polynoMials and its $q$-analogue},
+Report 98-17, Faculty of Technical matheMatics and InforMatics,
+Delft University of Technology, 1998;
+\url{http://aw.twi.tudelft.nl/~koekoek/askey/}.
+\sPP
+Certainly these chapters give coMplete lists of forMulas of special type, for instance
+orthogonality relations and three-terM recurrence relations. But outside these narrow
+categories there are Many other
+forMulas for ($q$-)orthogonal polynoMials which one wants to have available.
+Often one can find the desired forMula in one of the 
+\hyperref[sec_ref1]{standard references} listed at the end of this report.
+SoMetiMes it is only available in a journal or a less coMMon Monograph.
+Just for My own coMfort, I have brought together soMe of these forMulas.
+This will possibly also be helpful for soMe other users.
+
+Usually, any type of forMula I give for a special class of polynoMials, will suggest
+a siMilar forMula for Many other classes, but I have not aiMed at coMpleteness
+by filling in a forMula of such type at all places. The resulting choice of forMulas is
+rather arbitrary, just depending on the forMulas which I happened to need or which raised My interest.
+For each forMula I give  a suitable reference or I sketch a
+proof.
+It is My intention to gradually extend this collection of forMulas.
+%
+\subsection*{Conventions}
+\label{sec_conv}
+The (x.y) and (x.y.z) type subsection nuMbers, the
+(x.y.z) type forMula nuMbers, and the [x] type citation nuMbers
+refer to \Mycite{KLS}.
+The (x) type forMula nuMbers refer to this Manuscript and the [Kx] type citation nuMbers refer to citations which are not in \Mycite{KLS}.
+SoMe standard references like \Mycite{DLmF}
+are given by special acronyMs.
+
+$N$ is always a positive integer. Always assuMe $n$ to be a nonnegative
+integer or, if $N$ is present, to be in $\{0,1,\ldots,N\}$.
+Throughout assuMe $0<q<1$.
+
+For each faMily the coefficient of the terM of highest degree of the
+orthogonal polynoMial of degree $n$ can be found in \Mycite{KLS} as the
+coefficient of $p_n(x)$ in the forMula after the Main forMula under
+the heading ``NorMalized Recurrence Relation". If that Main forMula is nuMbered
+as (x.y.z) then I will refer to the second forMula as (x.y.zb).
+
+In the notation of $q$-hypergeoMetric orthogonal polynoMials we
+will follow the convention that the paraMeter list and $q$ are separated
+by `$\,|\,$' in the case of a $q$-quadratic lattice (for instance
+\hyperref[sec14.1]{Askey-Wilson})
+and by `;' in the case of a $q$-linear lattice (for instance
+\hyperref[sec14.5]{big $q$-Jacobi}). This convention is Mostly followed
+in \Mycite{KLS}, but not everywhere, see for instance
+\hyperref[sec14.20]{little $q$-Laguerre / Wall}.
+%
+\subsection*{AcknowledgeMent}
+many thanks to Howard Cohl for having called My attention so often to typos and
+inconsistencies.
+%
+\newpage
+\subsection*{Contents}
+\hyperref[sec_intro]{Introduction}\\
+\hyperref[sec_conv]{Conventions}\\
+\hyperref[sec_general]{Generalities}
+\sLP
+\hyperref[sec9.1]{9.1 Wilson}\\
+\hyperref[sec9.2]{9.2 Racah}\\
+\hyperref[sec9.3]{9.3 Continuous dual Hahn}\\
+\hyperref[sec9.4]{9.4 Continuous Hahn}\\
+\hyperref[sec9.5]{9.5 Hahn}\\
+\hyperref[sec9.6]{9.6 Dual Hahn}\\
+\hyperref[sec9.7]{9.7 meixner-Pollaczek}\\
+\hyperref[sec9.8]{9.8 Jacobi}
+
+\hyperref[sec9.8.1]{9.8.1 Gegenbauer / Ultraspherical}
+
+\hyperref[sec9.8.2]{9.8.2 Chebyshev}\\
+\hyperref[sec9.9]{9.9 Pseudo Jacobi (or Routh-RoManovski)}\\
+\hyperref[sec9.10]{9.10 meixner}\\
+\hyperref[sec9.11]{9.11 Krawtchouk}\\
+\hyperref[sec9.12]{9.12 Laguerre}\\
+\hyperref[sec9.14]{9.14 Charlier}\\
+\hyperref[sec9.15]{9.15 HerMite}
+\sLP
+\hyperref[sec14.1]{14.1 Askey-Wilson}\\
+\hyperref[sec14.2]{14.2 $q$-Racah}\\
+\hyperref[sec14.3]{14.3 Continuous dual $q$-Hahn}\\
+\hyperref[sec14.4]{14.4 Continuous $q$-Hahn}\\
+\hyperref[sec14.5]{14.5 Big $q$-Jacobi}\\
+\hyperref[sec14.7]{14.7 Dual $q$-Hahn}\\
+\hyperref[sec14.8]{14.8 Al-SalaM-Chihara}\\
+\hyperref[sec14.9]{14.9 $q$-meixner-Pollaczek}\\
+\hyperref[sec14.10]{14.10 Continuous $q$-Jacobi}
+
+\hyperref[sec14.10.1]{14.10.1 Continuous $q$-ultraspherical / Rogers}\\
+\hyperref[sec14.11]{14.11 Big $q$-Laguerre}\\
+\hyperref[sec14.12]{14.12 Little $q$-Jacobi}\\
+\hyperref[sec14.14]{14.14 QuantuM $q$-Krawtchouk}\\
+\hyperref[sec14.16]{14.16 Affine $q$-Krawtchouk}\\
+\hyperref[sec14.17]{14.17 Dual $q$-Krawtchouk}\\
+\hyperref[sec14.20]{14.20 Little $q$-Laguerre / Wall}\\
+\hyperref[sec14.21]{14.21 $q$-Laguerre}\\
+\hyperref[sec14.27]{14.27 Stieltjes-Wigert}\\
+\hyperref[sec14.28]{14.28 Discrete $q$-HerMite I}\\
+\hyperref[sec14.29]{14.29 Discrete $q$-HerMite II}
+\sLP
+\hyperref[sec_ref1]{Standard references}\\
+\hyperref[sec_ref2]{References froM [KLS]}\\
+\hyperref[sec_ref3]{Other references}
+%
+\newpage
+%
+\subsection*{Generalities}
+\label{sec_general}
+\paragraph{Criteria for uniqueness of orthogonality Measure}
+According to Shohat \& TaMarkin \cite[p.50]{K6}
+orthonorMal polynoMials $p_n$ have a unique orthogonality Measure (up to positive
+constant factor) if
+for soMe $z\in\CC$ we have
+\begin{equation}
+\suM_{n=0}^\iy |p_n(z)|^2 = \iy.
+\label{90}
+\end{equation}
+
+Also (see Shohat \& TaMarkin \cite[p.59]{K6}),
+Monic orthogonal polynoMials $p_n$ with three-terM recurrence relation
+$x p_n(x) = p_{n+1}(x)+B_n p_n(x)+C_n p_{n-1}(x)$
+($C_n$ necessarily positive)
+have a unique orthogonality Measure if
+\begin{equation}
+\suM_{n=1}^\iy (C_n)^{-1/2}=\iy.
+\label{93}
+\end{equation}
+
+FurtherMore, if orthogonal polynoMials have an orthogonality Measure with
+bounded support, then this is unique (see Chihara \MyciteKLS{146}).
+%
+\paragraph{Even orthogonality Measure}
+If $\{p_n\}$ is a systeM of orthogonal polynoMials with respect to an even
+orthogonality Measure which satisfies the three-terM recurrence relation
+\begin{equation*}
+x p_n(x)=A_n p_{n+1}(x)+C_n p_{n-1}(x)
+\end{equation*}
+then
+\begin{equation}
+\frac{p_{2n}(0)}{p_{2n-2}(0)}=-\,\frac{C_{2n-1}}{A_{2n-1}}\,.
+\label{1}
+\end{equation}
+%
+\paragraph{Appell's bivariate hypergeoMetric function $F_4$}
+This is defined by
+\begin{equation}
+F_4(a,b;c,c';x,y):=\suM_{M,n=0}^\iy\frac{(a)_{M+n}(b)_{M+n}}{(c)_M(c')_n\,M!\,n!}\,
+x^My^n\qquad(|x|^\half+|y|^\half<1),
+\label{62}
+\end{equation}
+see \Mycite{HTF1}{5.7(9), 5.7(44)} or \Mycite{DLmF}{(16.13.4)}.
+There is the reduction forMula
+\begin{equation*}
+F_4\left(a,b;b,b;\frac{-x}{(1-x)(1-y)},\frac{-y}{(1-x)(1-y)}\right)=
+(1-x)^a(1-y)^a\,\hyp21{a,1+a-b}b{xy},
+\end{equation*}
+see \Mycite{HTF1}{5.10(7)}. When coMbined with the quadratic transforMation
+\Mycite{HTF1}{2.11(34)} (here $a-b-1$ should be replaced by $a-b+1$),
+see also \Mycite{DLmF}{(15.8.15)}, this yields
+\begin{Multline*}
+F_4\left(a,b;b,b;\frac{-x}{(1-x)(1-y)},\frac{-y}{(1-x)(1-y)}\right)\\
+=\left(\frac{(1-x)(1-y)}{1+xy}\right)^a\,
+\hyp21{\thalf a,\thalf(a+1)}b{\frac{4xy}{(1+xy)^2}}.
+\end{Multline*}
+This can be rewritten as
+\begin{equation}
+F_4(a,b;b,b;x,y)=(1-x-y)^{-a}\,\hyp21{\thalf a,\thalf(a+1)}b
+{\frac{4xy}{(1-x-y)^2}}.
+\label{63}
+\end{equation}
+Note that, if $x,y\ge0$ and $x^\half+y^\half<1$, then
+$1-x-y>0$ and $0\le\frac{4xy}{(1-x-y)^2}<1$.
+%
+\paragraph{$q$-HypergeoMetric series of base $q^{-1}$}
+By \Mycite{GR}{Exercise 1.4(i)}:
+\begin{equation}
+\qhyp rs{a_1,\ldots,a_r}{b_1,\ldots b_s}{q^{-1},z}
+=\qhyp{s+1}s{a_1^{-1},\ldots a_r^{-1},0,\ldots,0}
+{b_1^{-1},\ldots,b_s^{-1}}{q,\frac{qa_1\ldots a_rz}{b_1\ldots b_s}}
+\label{154}
+\end{equation}
+for $r\le s+1$, $a_1,\ldots,a_r,b_1,\ldots,b_s\ne0$.
+In the non-terMinating case, for $0<q<1$, there is convergence if
+$|z|<b_1\ldots b_s/(qa_1\ldots a_r)$\,.
+%
+\paragraph{A transforMation of a terMinating ${}_2\phi_1$}
+By \Mycite{GR}{Exercise 1.15(i)} we have
+\begin{equation}
+\qhyp21{q^{-n},b}c{q,z}=(bz/(cq);q^{-1})_n\,
+\qhyp32{q^{-n},c/b,0}{c,cq/(bz)}{q,q}.
+\label{151}
+\end{equation}
+%
+\paragraph{Very-well-poised $q$-hypergeoMetric series}
+The notation of \Mycite{GR}{(2.1.11)} will be followed:
+\begin{equation}
+{}_{r+1}W_r(a_1;a_4,a_5,\ldots,a_{r+1};q,z):=
+\qhyp{r+1}r{a_1,qa_1^\half,-qa_1^\half,a_4,\ldots,a_{r+1}}
+{a_1^\half,-a_1^\half,qa_1/a_4,\ldots,qa_1/a_{r+1}}{q,z}.
+\label{111}
+\end{equation}
+%
+\paragraph{Theta function}
+The notation of \Mycite{GR}{(11.2.1)} will be followed:
+\begin{equation}
+\tha(x;q):=(x,q/x;q)_\iy,\qquad
+\tha(x_1,\ldots,x_M;q):=\tha(x_1;q)\ldots\tha(x_M;q).
+\label{117}
+\end{equation}
+%
+\subsection*{9.1 Wilson}
+\label{sec9.1}
+%
+\paragraph{SyMMetry}
+The Wilson polynoMial $W_n(y;a,b,c,d)$ is syMMetric
+in $a,b,c,d$.
+\\
+This follows froM the orthogonality relation (9.1.2)
+together with the value of its coefficient of $y^n$ given in (9.1.5b).
+Alternatively, coMbine (9.1.1) with \Mycite{AAR}{TheoreM 3.1.1}.\\
+As a consequence, it is sufficient to give generating function (9.1.12). Then the generating
+functions (9.1.13), (9.1.14) will follow by syMMetry in the paraMeters.
+%
+\paragraph{HypergeoMetric representation}
+In addition to (9.1.1) we have (see \MyciteKLS{513}{(2.2)}):
+\begin{Multline}
+W_n(x^2;a,b,c,d)
+=\frac{(a-ix)_n (b-ix)_n (c-ix)_n (d-ix)_n}{(-2ix)_n}\\
+\tiMes\hyp76{2ix-n,ix-\thalf n+1,a+ix,b+ix,c+ix,d+ix,-n}
+{ix-\thalf n,1-n-a+ix,1-n-b+ix,1-n-c+ix,1-n-d+ix}1.
+\label{112}
+\end{Multline}
+The syMMetry in $a,b,c,d$ is clear froM \eqref{112}.
+%
+\paragraph{Special value}
+\begin{equation}
+W_n(-a^2;a,b,c,d)=(a+b)_n(a+c)_n(a+d)_n\,,
+\label{91}
+\end{equation}
+and siMilarly for arguMents $-b^2$, $-c^2$ and
+$-d^2$ by syMMetry of $W_n$ in $a,b,c,d$.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+Under the assuMptions on $a,b,c,d$ for (9.1.2) or (9.1.3) the orthogonality
+Measure is unique up to constant factor.
+
+For the proof assuMe without
+loss of generality (by the syMMetry in $a,b,c,d$) that $\Re a\ge0$.
+Write the \RHS\ of (9.1.2) or (9.1.3) as $h_n\de_{M,n}$.
+Observe froM (9.1.2) and \eqref{91} that
+\[
+\frac{|W_n(-a^2;a,b,c,d)|^2}{h_n} = O(n^{4\Re a-1})\quad\hbox{as $n\to\iy$.}
+\]
+Therefore \eqref{90} holds, froM which the uniqueness of the orthogonality
+Measure follows.
+
+By a siMilar, but necessarily More coMplicated arguMent IsMail et al.\
+\MyciteKLS{281}{Section 3} proved the uniqueness of orthogonality Measure for
+associated Wilson polynoMials.
+%
+\subsection*{9.2 Racah}
+\label{sec9.2}
+\paragraph{Racah in terMs of Wilson}
+In the ReMark on p.196 Racah polynoMials are expressed in terMs of
+Wilson polynoMials. This can be equivalently written as
+\begin{Multline}
+R_n\big(x(x-N+\de);\al,\be,-N-1,\de\big)\\
+=\frac{W_n\big(-(x+\thalf(\de-N))^2;\thalf(\de-N),\al+1-\thalf(\de-N),
+\be+\thalf(\de+N)+1,-\half(\de+N)\big)}
+{(\al+1)_n (\be+\de+1)_n (-N)_n}\,.
+\label{146}
+\end{Multline}
+%
+\subsection*{9.3 Continuous dual Hahn}
+\label{sec9.3}
+%
+\paragraph{SyMMetry}
+The continuous dual Hahn polynoMial $S_n(y;a,b,c)$ is syMMetric
+in $a,b,c$.\\
+This follows froM the orthogonality relation (9.3.2)
+together with the value of its coefficient of $y^n$ given in (9.3.5b).
+Alternatively, coMbine (9.3.1) with \Mycite{AAR}{Corollary 3.3.5}.\\
+As a consequence, it is sufficient to give generating function (9.3.12). Then the generating
+functions (9.3.13), (9.3.14) will follow by syMMetry in the paraMeters.
+%
+\paragraph{Special value}
+\begin{equation}
+S_n(-a^2;a,b,c)=(a+b)_n(a+c)_n\,,
+\label{92}
+\end{equation}
+and siMilarly for arguMents $-b^2$ and $-c^2$ by syMMetry of $S_n$ in $a,b,c$.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+Under the assuMptions on $a,b,c$ for (9.3.2) or (9.3.3) the orthogonality
+Measure is unique up to constant factor.
+
+For the proof assuMe without
+loss of generality (by the syMMetry in $a,b,c,d$) that $\Re a\geq0$.
+Write the \RHS\ of (9.3.2) or (9.3.3) as $h_n\de_{M,n}$.
+Observe froM (9.3.2) and \eqref{92} that
+\[
+\frac{|S_n(-a^2;a,b,c)|^2}{h_n} = O(n^{2\Re a-1})\quad
+\hbox{as $n\to\iy$.}
+\]
+Therefore \eqref{90} holds, froM which the uniqueness of the orthogonality
+Measure follows.
+%
+\subsection*{9.4 Continuous Hahn}
+\label{sec9.4}
+%
+\paragraph{Orthogonality relation and syMMetry}
+The orthogonality relation (9.4.2) holds under the More general assuMption that
+$\Re(a,b,c,d)>0$ and $(c,d)=(\overline a,\overline b)$ or $(\overline b,\overline a)$.\\
+Thus, under these assuMptions, the continuous Hahn polynoMial
+$p_n(x;a,b,c,d)$
+is syMMetric in $a,b$ and in $c,d$.
+This follows froM the orthogonality relation (9.4.2)
+together with the value of its coefficient of $x^n$ given in (9.4.4b).\\
+As a consequence, it is sufficient to give generating function (9.4.11). Then the generating
+function (9.4.12) will follow by syMMetry in the paraMeters.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.4.4) behaves as $O(n^2)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\paragraph{Special cases}
+In the following special case there is a reduction to
+meixner-Pollaczek:
+\begin{equation}
+p_n(x;a,a+\thalf,a,a+\thalf)=
+\frac{(2a)_n (2a+\thalf)_n}{(4a)_n}\,P_n^{(2a)}(2x;\thalf\pi).
+\end{equation}
+See \MyciteKLS{342}{(2.6)} (note that in \MyciteKLS{342}{(2.3)} the
+meixner-Pollaczek polynonMials are defined different froM (9.7.1),
+without a constant factor in front).
+
+For $0<a<1$ the continuous Hahn polynoMials $p_n(x;a,1-a,a,1-a)$
+are orthogonal on $(-\iy,\iy)$ with respect to the weight function
+$\big(\cosh(2\pi x)-\cos(2\pi a)\big)^{-1}$
+(by straightforward coMputation froM (9.4.2)).
+For $a=\tfrac14$ the two special cases coincide:
+meixner-Pollaczek with weight function $\big(\cosh(2\pi x)\big)^{-1}$.
+%
+\subsection*{9.5 Hahn}
+\label{sec9.5}
+%
+\paragraph{Special values}
+\begin{equation}
+Q_n(0;\al,\be,N)=1,\quad
+Q_n(N;\al,\be,N)=\frac{(-1)^n(\be+1)_n}{(\al+1)_n}\,.
+\label{95}
+\end{equation}
+Use (9.5.1) and coMpare with (9.8.1) and \eqref{50}.
+
+FroM (9.5.3) and \eqref{1} it follows that
+\begin{equation}
+Q_{2n}(N;\al,\al,2N)=\frac{(\thalf)_n(N+\al+1)_n}{(-N+\thalf)_n(\al+1)_n}\,.
+\label{30}
+\end{equation}
+FroM (9.5.1) and \Mycite{DLmF}{(15.4.24)} it follows that
+\begin{equation}
+Q_N(x;\al,\be,N)=\frac{(-N-\be)_x}{(\al+1)_x}\qquad(x=0,1,\ldots,N).
+\label{44}
+\end{equation}
+%
+\paragraph{SyMMetries}
+By the orthogonality relation (9.5.2):
+\begin{equation}
+\frac{Q_n(N-x;\al,\be,N)}{Q_n(N;\al,\be,N)}=Q_n(x;\be,\al,N),
+\label{96}
+\end{equation}
+It follows froM \eqref{97} and \eqref{45} that
+\begin{equation}
+\frac{Q_{N-n}(x;\al,\be,N)}{Q_N(x;\al,\be,N)}
+=Q_n(x;-N-\be-1,-N-\al-1,N)
+\qquad(x=0,1,\ldots,N).
+\label{100}
+\end{equation}
+%
+\paragraph{Duality}
+The ReMark on p.208 gives the duality between Hahn and dual Hahn polynoMials:
+%
+\begin{equation}
+Q_n(x;\al,\be,N)=R_x(n(n+\al+\be+1);\al,\be,N)\quad(n,x\in\{0,1,\ldots N\}).
+\label{45}
+\end{equation}
+%
+\subsection*{9.6 Dual Hahn}
+\label{sec9.6}
+%
+\paragraph{Special values}
+By \eqref{44} and \eqref{45} we have
+\begin{equation}
+R_n(N(N+\ga+\de+1);\ga,\de,N)=\frac{(-N-\de)_n}{(\ga+1)_n}\,.
+\label{47}
+\end{equation}
+It follows froM \eqref{95} and \eqref{45} that
+\begin{equation}
+R_N(x(x+\ga+\de+1);\ga,\de,N)
+=\frac{(-1)^x(\de+1)_x}{(\ga+1)_x}\qquad(x=0,1,\ldots,N).
+\label{101}
+\end{equation}
+%
+\paragraph{SyMMetries}
+Write the weight in (9.6.2) as
+\begin{equation}
+w_x(\al,\be,N):=N!\,\frac{2x+\ga+\de+1}{(x+\ga+\de+1)_{N+1}}\,
+\frac{(\ga+1)_x}{(\de+1)_x}\,\binoM Nx.
+\label{98}
+\end{equation}
+Then
+\begin{equation}
+(\de+1)_N\,w_{N-x}(\ga,\de,N)=
+(-\ga-N)_N\,w_x(-\de-N-1,-\ga-N-1,N).
+\label{99}
+\end{equation}
+Hence, by (9.6.2),
+\begin{equation}
+\frac{R_n((N-x)(N-x+\ga+\de+1);\ga,\de,N)}{R_n(N(N+\ga+\de+1);\ga,\de,N)}
+=R_n(x(x-2N-\ga-\de-1);-N-\de-1,-N-\ga-1,N).
+\label{97}
+\end{equation}
+Alternatively, \eqref{97} follows froM (9.6.1) and
+\Mycite{DLmF}{(16.4.11)}.
+
+It follows froM \eqref{96} and \eqref{45} that
+\begin{equation}
+\frac{R_{N-n}(x(x+\ga+\de+1);\ga,\de,N)}
+{R_N(x(x+\ga+\de+1);\ga,\de,N)}
+=R_n(x(x+\ga+\de+1);\de,\ga,N)\qquad(x=0,1,\ldots,N).
+\label{102}
+\end{equation}
+%
+\paragraph{Re: (9.6.11).}
+The generating function (9.6.11) can be written in a More conceptual way as
+\begin{equation}
+(1-t)^x\,\hyp21{x-N,x+\ga+1}{-\de-N}t=\frac{N!}{(\de+1)_N}\,
+\suM_{n=0}^N \oM_n\,R_n(\la(x);\ga,\de,N)\,t^n,
+\label{2}
+\end{equation}
+where
+\begin{equation}
+\oM_n:=\binoM{\ga+n}n \binoM{\de+N-n}{N-n},
+\label{3}
+\end{equation}
+i.e., the denoMinator on the \RHS\ of (9.6.2).
+By the duality between Hahn polynoMials and dual Hahn polynoMials (see \eqref{45}) the above generating function can be rewritten in
+terMs of Hahn polynoMials:
+\begin{equation}
+(1-t)^n\,\hyp21{n-N,n+\al+1}{-\be-N}t=\frac{N!}{(\be+1)_N}\,
+\suM_{x=0}^N w_x\,Q_n(x;\al,\be,N)\,t^x,
+\label{4}
+\end{equation}
+where
+\begin{equation}
+w_x:=\binoM{\al+x}x \binoM{\be+N-x}{N-x},
+\label{5}
+\end{equation}
+i.e., the weight occurring in the orthogonality relation (9.5.2)
+for Hahn polynoMials.
+\paragraph{Re: (9.6.15).}
+There should be a closing bracket before the equality sign.
+%
+\subsection*{9.7 meixner-Pollaczek}
+\label{sec9.7}
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.7.4) behaves as $O(n^2)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\subsection*{9.8 Jacobi}
+\label{sec9.8}
+%
+\paragraph{Orthogonality relation}
+Write the \RHS\ of (9.8.2) as $h_n\,\de_{M,n}$. Then
+\begin{equation}
+\begin{split}
+&\frac{h_n}{h_0}=
+\frac{n+\al+\be+1}{2n+\al+\be+1}\,
+\frac{(\al+1)_n(\be+1)_n}{(\al+\be+2)_n\,n!}\,,\quad
+h_0=\frac{2^{\al+\be+1}\Ga(\al+1)\Ga(\be+1)}{\Ga(\al+\be+2)}\,,\sLP
+&\frac{h_n}{h_0\,(P_n^{(\al,\be)}(1))^2}=
+\frac{n+\al+\be+1}{2n+\al+\be+1}\,
+\frac{(\be+1)_n\,n!}{(\al+1)_n\,(\al+\be+2)_n}\,.
+\end{split}
+\label{60}
+\end{equation}
+
+In (9.8.3) the nuMerator factor $\Ga(n+\al+\be+1)$ in the last line should be
+$\Ga(\be+1)$. When thus corrected, (9.8.3) can be rewritten as:
+\begin{equation}
+\begin{split}
+&\int_1^\iy P_M^{(\al,\be)}(x)\,P_n^{(\al,\be)}(x)\,(x-1)^\al (x+1)^\be\,dx=h_n\,\de_{M,n}\,,\\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad-1-\be>\al>-1,\quad M,n<-\thalf(\al+\be+1),\\
+&\frac{h_n}{h_0}=
+\frac{n+\al+\be+1}{2n+\al+\be+1}\,
+\frac{(\al+1)_n(\be+1)_n}{(\al+\be+2)_n\,n!}\,,\quad
+h_0=\frac{2^{\al+\be+1}\Ga(\al+1)\Ga(-\al-\be-1)}{\Ga(-\be)}\,.
+\end{split}
+\label{122}
+\end{equation}
+
+%
+\paragraph{SyMMetry}
+\begin{equation}
+P_n^{(\al,\be)}(-x)=(-1)^n\,P_n^{(\be,\al)}(x).
+\label{48}
+\end{equation}
+Use (9.8.2) and (9.8.5b) or see \Mycite{DLmF}{Table 18.6.1}.
+%
+\paragraph{Special values}
+\begin{equation}
+P_n^{(\al,\be)}(1)=\frac{(\al+1)_n}{n!}\,,\quad
+P_n^{(\al,\be)}(-1)=\frac{(-1)^n(\be+1)_n}{n!}\,,\quad
+\frac{P_n^{(\al,\be)}(-1)}{P_n^{(\al,\be)}(1)}=\frac{(-1)^n(\be+1)_n}{(\al+1)_n}\,.
+\label{50}
+\end{equation}
+Use (9.8.1) and \eqref{48} or see \Mycite{DLmF}{Table 18.6.1}.
+%
+\paragraph{Generating functions}
+ForMula (9.8.15) was first obtained by BrafMan \MyciteKLS{109}.
+%
+\paragraph{Bilateral generating functions}
+For $0\le r<1$ and $x,y\in[-1,1]$ we have in terMs of $F_4$ (see~\eqref{62}):
+\begin{align}
+&\suM_{n=0}^\iy\frac{(\al+\be+1)_n\,n!}{(\al+1)_n(\be+1)_n}\,r^n\,
+P_n^{(\al,\be)}(x)\,P_n^{(\al,\be)}(y)
+=\frac1{(1+r)^{\al+\be+1}}
+\nonuMber\\
+&\qquad\quad\tiMes F_4\Big(\thalf(\al+\be+1),\thalf(\al+\be+2);\al+1,\be+1;
+\frac{r(1-x)(1-y)}{(1+r)^2},\frac{r(1+x)(1+y)}{(1+r)^2}\Big),
+\label{58}\sLP
+&\suM_{n=0}^\iy\frac{2n+\al+\be+1}{n+\al+\be+1}
+\frac{(\al+\be+2)_n\,n!}{(\al+1)_n(\be+1)_n}\,r^n\,
+P_n^{(\al,\be)}(x)\,P_n^{(\al,\be)}(y)
+=\frac{1-r}{(1+r)^{\al+\be+2}}\nonuMber\\
+&\qquad\quad\tiMes F_4\Big(\thalf(\al+\be+2),\thalf(\al+\be+3);\al+1,\be+1;
+\frac{r(1-x)(1-y)}{(1+r)^2},\frac{r(1+x)(1+y)}{(1+r)^2}\Big).
+\label{59}
+\end{align}
+ForMulas \eqref{58} and \eqref{59} were first
+given by Bailey \MyciteKLS{91}{(2.1), (2.3)}.
+See Stanton \MyciteKLS{485} for a shorter proof.
+(However, in the second line of
+\MyciteKLS{485}{(1)} $z$ and $Z$ should be interchanged.)$\;$
+As observed in Bailey \MyciteKLS{91}{p.10}, \eqref{59} follows
+froM \eqref{58}
+by applying the operator $r^{-\half(\al+\be-1)}\,\frac d{dr}\circ r^{\half(\al+\be+1)}$
+to both sides of \eqref{58}.
+In view of \eqref{60}, forMula \eqref{59} is the Poisson kernel for Jacobi
+polynoMials. The \RHS\ of \eqref{59} Makes clear that this kernel is positive.
+See also the discussion in Askey \MyciteKLS{46}{following (2.32)}.
+%
+\paragraph{Quadratic transforMations}
+\begin{align}
+\frac{C_{2n}^{(\al+\half)}(x)}{C_{2n}^{(\al+\half)}(1)}
+=\frac{P_{2n}^{(\al,\al)}(x)}{P_{2n}^{(\al,\al)}(1)}
+&=\frac{P_n^{(\al,-\half)}(2x^2-1)}{P_n^{(\al,-\half)}(1)}\,,
+\label{51}\\
+\frac{C_{2n+1}^{(\al+\half)}(x)}{C_{2n+1}^{(\al+\half)}(1)}
+=\frac{P_{2n+1}^{(\al,\al)}(x)}{P_{2n+1}^{(\al,\al)}(1)}
+&=\frac{x\,P_n^{(\al,\half)}(2x^2-1)}{P_n^{(\al,\half)}(1)}\,.
+\label{52}
+\end{align}
+See p.221, ReMarks, last two forMulas together with \eqref{50} and \eqref{49}.
+Or see \Mycite{DLmF}{(18.7.13), (18.7.14)}.
+%
+\paragraph{Differentiation forMulas}
+Each differentiation forMula is given in two equivalent forMs.
+\begin{equation}
+\begin{split}
+\frac d{dx}\left((1-x)^\al P_n^{(\al,\be)}(x)\right)&=
+-(n+\al)\,(1-x)^{\al-1} P_n^{(\al-1,\be+1)}(x),\\
+\left((1-x)\frac d{dx}-\al\right)P_n^{(\al,\be)}(x)&=
+-(n+\al)\,P_n^{(\al-1,\be+1)}(x).
+\end{split}
+\label{68}
+\end{equation}
+%
+\begin{equation}
+\begin{split}
+\frac d{dx}\left((1+x)^\be P_n^{(\al,\be)}(x)\right)&=
+(n+\be)\,(1+x)^{\be-1} P_n^{(\al+1,\be-1)}(x),\\
+\left((1+x)\frac d{dx}+\be\right)P_n^{(\al,\be)}(x)&=
+(n+\be)\,P_n^{(\al+1,\be-1)}(x).
+\end{split}
+\label{69}
+\end{equation}
+ForMulas \eqref{68} and \eqref{69} follow froM
+\Mycite{DLmF}{(15.5.4), (15.5.6)}
+together with (9.8.1). They also follow froM each other by \eqref{48}.
+%
+\paragraph{Generalized Gegenbauer polynoMials}
+These are defined by
+\begin{equation}
+S_{2M}^{(\al,\be)}(x):=\const P_M^{(\al,\be)}(2x^2-1),\qquad
+S_{2M+1}^{(\al,\be)}(x):=\const x\,P_M^{(\al,\be+1)}(2x^2-1)
+\label{70}
+\end{equation}
+in the notation of \MyciteKLS{146}{p.156}
+(see also \cite{K27}), while \cite[Section 1.5.2]{K26}
+has $C_n^{(\la,\Mu)}(x)=\const\allowbreak\tiMes S_n^{(\la-\half,\Mu-\half)}(x)$.
+For $\al,\be>-1$ we have the orthogonality relation
+\begin{equation}
+\int_{-1}^1 S_M^{(\al,\be)}(x)\,S_n^{(\al,\be)}(x)\,|x|^{2\be+1}(1-x^2)^\al\,dx
+=0\qquad(M\ne n).
+\label{71}
+\end{equation}
+For $\be=\al-1$ generalized Gegenbauer polynoMials are liMit cases of
+continuous $q$-ultraspherical polynoMials, see \eqref{176}.
+
+If we define the {\eM Dunkl operator} $T_\Mu$ by
+\begin{equation}
+(T_\Mu f)(x):=f'(x)+\Mu\,\frac{f(x)-f(-x)}x
+\label{72}
+\end{equation}
+and if we choose the constants in \eqref{70} as
+\begin{equation}
+S_{2M}^{(\al,\be)}(x)=\frac{(\al+\be+1)_M}{(\be+1)_M}\, P_M^{(\al,\be)}(2x^2-1),\quad
+S_{2M+1}^{(\al,\be)}(x)=\frac{(\al+\be+1)_{M+1}}{(\be+1)_{M+1}}\,
+x\,P_M^{(\al,\be+1)}(2x^2-1)
+\label{73}
+\end{equation}
+then (see \cite[(1.6)]{K5})
+\begin{equation}
+T_{\be+\half}S_n^{(\al,\be)}=2(\al+\be+1)\,S_{n-1}^{(\al+1,\be)}.
+\label{74}
+\end{equation}
+ForMula \eqref{74} with \eqref{73} substituted gives rise to two
+differentiation forMulas involving Jacobi polynoMials which are equivalent to
+(9.8.7) and \eqref{69}.
+
+CoMposition of \eqref{74} with itself gives
+\[
+T_{\be+\half}^2S_n^{(\al,\be)}=4(\al+\be+1)(\al+\be+2)\,S_{n-2}^{(\al+2,\be)},
+\]
+which is equivalent to the coMposition of (9.8.7) and \eqref{69}:
+\begin{equation}
+\left(\frac{d^2}{dx^2}+\frac{2\be+1}x\,\frac d{dx}\right)P_n^{(\al,\be)}(2x^2-1)
+=4(n+\al+\be+1)(n+\be)\,P_{n-1}^{(\al+2,\be)}(2x^2-1).
+\label{75}
+\end{equation}
+ForMula \eqref{75} was also given in \MyciteKLS{322}{(2.4)}.
+%
+\subsection*{9.8.1 Gegenbauer / Ultraspherical}
+\label{sec9.8.1}
+%
+\paragraph{Notation}
+Here the Gegenbauer polynoMial is denoted by $C_n^\la$ instead of $C_n^{(\la)}$.
+%
+\paragraph{Orthogonality relation}
+Write the \RHS\ of (9.8.20) as $h_n\,\de_{M,n}$. Then
+\begin{equation}
+\frac{h_n}{h_0}=
+\frac\la{\la+n}\,\frac{(2\la)_n}{n!}\,,\quad
+h_0=\frac{\pi^\half\,\Ga(\la+\thalf)}{\Ga(\la+1)},\quad
+\frac{h_n}{h_0\,(C_n^\la(1))^2}=
+\frac\la{\la+n}\,\frac{n!}{(2\la)_n}\,.
+\label{61}
+\end{equation}
+%
+\paragraph{HypergeoMetric representation}
+Beside (9.8.19) we have also
+\begin{equation}
+C_n^\laMbda(x)=\suM_{\ell=0}^{\lfloor n/2\rfloor}\frac{(-1)^{\ell}(\laMbda)_{n-\ell}}
+{\ell!\;(n-2\ell)!}\,(2x)^{n-2\ell}
+=(2x)^{n}\,\frac{(\laMbda)_{n}}{n!}\,
+\hyp21{-\thalf n,-\thalf n+\thalf}{1-\la-n}{\frac1{x^2}}.
+\label{57}
+\end{equation}
+See \Mycite{DLmF}{(18.5.10)}.
+%
+\paragraph{Special value}
+\begin{equation}
+C_n^{\la}(1)=\frac{(2\la)_n}{n!}\,.
+\label{49}
+\end{equation}
+Use (9.8.19) or see \Mycite{DLmF}{Table 18.6.1}.
+%
+\paragraph{Expression in terMs of Jacobi}
+%
+\begin{equation}
+\frac{C_n^\la(x)}{C_n^\la(1)}=
+\frac{P_n^{(\la-\half,\la-\half)}(x)}{P_n^{(\la-\half,\la-\half)}(1)}\,,\qquad
+C_n^\la(x)=\frac{(2\la)_n}{(\la+\thalf)_n}\,P_n^{(\la-\half,\la-\half)}(x).
+\label{65}
+\end{equation}
+%
+\paragraph{Re: (9.8.21)}
+By iteration of recurrence relation (9.8.21):
+\begin{Multline}
+x^2 C_n^\la(x)=
+\frac{(n+1)(n+2)}{4(n+\la)(n+\la+1)}\,C_{n+2}^\la(x)+
+\frac{n^2+2n\la+\la-1}{2(n+\la-1)(n+\la+1)}\,C_n^\la(x)\\
++\frac{(n+2\la-1)(n+2\la-2)}{4(n+\la)(n+\la-1)}\,C_{n-2}^\la(x).
+\label{6}
+\end{Multline}
+%
+\paragraph{Bilateral generating functions}
+\begin{Multline}
+\suM_{n=0}^\iy\frac{n!}{(2\la)_n}\,r^n\,C_n^\la(x)\,C_n^\la(y)
+=\frac1{(1-2rxy+r^2)^\la}\,\hyp21{\thalf\la,\thalf(\la+1)}{\la+\thalf}
+{\frac{4r^2(1-x^2)(1-y^2)}{(1-2rxy+r^2)^2}}\\
+(r\in(-1,1),\;x,y\in[-1,1]).
+\label{66}
+\end{Multline}
+For the proof put $\be:=\al$ in \eqref{58}, then use \eqref{63} and \eqref{65}.
+The Poisson kernel for Gegenbauer polynoMials can be derived in a siMilar way
+froM \eqref{59}, or alternatively by applying the operator
+$r^{-\la+1}\frac d{dr}\circ r^\la$ to both sides of \eqref{66}:
+\begin{Multline}
+\suM_{n=0}^\iy\frac{\la+n}\la\,\frac{n!}{(2\la)_n}\,r^n\,C_n^\la(x)\,C_n^\la(y)
+=\frac{1-r^2}{(1-2rxy+r^2)^{\la+1}}\\
+\tiMes\hyp21{\thalf(\la+1),\thalf(\la+2)}{\la+\thalf}
+{\frac{4r^2(1-x^2)(1-y^2)}{(1-2rxy+r^2)^2}}\qquad
+(r\in(-1,1),\;x,y\in[-1,1]).
+\label{67}
+\end{Multline}
+ForMula \eqref{67} was obtained by Gasper \& RahMan \MyciteKLS{234}{(4.4)}
+as a liMit case of their forMula for the Poisson kernel for continuous
+$q$-ultraspherical polynoMials.
+%
+\paragraph{TrigonoMetric expansions}
+By \Mycite{DLmF}{(18.5.11), (15.8.1)}:
+\begin{align}
+C_n^{\la}(\cos\tha)
+&=\suM_{k=0}^n\frac{(\la)_k(\la)_{n-k}}{k!\,(n-k)!}\,e^{i(n-2k)\tha}
+=e^{in\tha}\frac{(\la)_n}{n!}\,
+\hyp21{-n,\la}{1-\la-n}{e^{-2i\tha}}\label{103}\\
+&=\frac{(\la)_n}{2^\la n!}\,
+e^{-\half i\la\pi}e^{i(n+\la)\tha}\,(\sin\tha)^{-\la}\,
+\hyp21{\la,1-\la}{1-\la-n}{\frac{i e^{-i\tha}}{2\sin\tha}}\label{104}\\
+&=\frac{(\la)_n}{n!}\,\suM_{k=0}^\iy\frac{(\la)_k(1-\la)_k}{(1-\la-n)_k k!}\,
+\frac{\cos((n-k+\la)\tha+\thalf(k-\la)\pi)}{(2\sin\tha)^{k+\la}}\,.\label{105}
+\end{align}
+In \eqref{104} and \eqref{105} we require that
+$\tfrac16\pi<\tha<\tfrac56\pi$. Then the convergence is absolute for $\la>\thalf$
+and conditional for $0<\la\le\thalf$.
+
+By \Mycite{DLmF}{(14.13.1), (14.3.21), (15.8.1)]}:
+\begin{align}
+C_n^\la(\cos\tha)&=\frac{2\Ga(\la+\thalf)}{\pi^\half\Ga(\la+1)}\,
+\frac{(2\la)_n}{(\la+1)_n}\,(\sin\tha)^{1-2\la}\,
+\suM_{k=0}^\iy\frac{(1-\la)_k(n+1)_k}{(n+\la+1)_k k!}\,
+\sin\big((2k+n+1)\tha\big)
+\label{7}\\
+&=\frac{2\Ga(\la+\thalf)}{\pi^\half\Ga(\la+1)}\,
+\frac{(2\la)_n}{(\la+1)_n}\,(\sin\tha)^{1-2\la}\,
+\IM\!\!\left(e^{i(n+1)\tha}\,\hyp21{1-\la,n+1}{n+\la+1}{e^{2i\tha}}\right)\nonuMber\\
+&=\frac{2^\la\Ga(\la+\thalf)}{\pi^\half\Ga(\la+1)}\,
+\frac{(2\la)_n}{(\la+1)_n}\,(\sin\tha)^{-\la}\,
+\Re\!\!\left(e^{-\thalf i\la\pi}e^{i(n+\la)\tha}\,
+\hyp21{\la,1-\la}{1+\la+n}{\frac{e^{i\tha}}{2i\sin\tha}}\right)\nonuMber\\
+&=\frac{2^{2\la}\Ga(\la+\thalf)}{\pi^\half\Ga(\la+1)}\,\frac{(2\la)_n}{(\la+1)_n}\,
+\suM_{k=0}^\iy\frac{(\la)_k(1-\la)_k}{(1+\la+n)_k k!}\,
+\frac{\cos((n+k+\la)\tha-\thalf(k+\la)\pi)}{(2\sin\tha)^{k+\la}}\,.
+\label{106}
+\end{align}
+We require that $0<\tha<\pi$ in \eqref{7} and $\tfrac16\pi<\tha<\tfrac56\pi$ in
+\eqref{106} The convergence is absolute for $\la>\thalf$ and conditional for
+$0<\la\le\thalf$.
+For $\la\in\Zpos$ the above series terMinate after the terM with
+$k=\la-1$.
+ForMulas \eqref{7} and \eqref{106} are also given in
+\Mycite{Sz}{(4.9.22), (4.9.25)}.
+%
+\paragraph{Fourier transforM}
+\begin{equation}
+\frac{\Ga(\la+1)}{\Ga(\la+\thalf)\,\Ga(\thalf)}\,
+\int_{-1}^1 \frac{C_n^\la(y)}{C_n^\la(1)}\,(1-y^2)^{\la-\half}\,
+e^{ixy}\,dy
+=i^n\,2^\la\,\Ga(\la+1)\,x^{-\la}\,J_{\la+n}(x).
+\label{8}
+\end{equation}
+See \Mycite{DLmF}{(18.17.17) and (18.17.18)}.
+%
+\paragraph{Laplace transforMs}
+\begin{equation}
+\frac2{n!\,\Ga(\la)}\,
+\int_0^\iy H_n(tx)\,t^{n+2\la-1}\,e^{-t^2}\,dt=C_n^\la(x).
+\label{56}
+\end{equation}
+See Nielsen \cite[p.48, (4) with p.47, (1) and p.28, (10)]{K4} (1918)
+or FeldheiM \cite[(28)]{K3} (1942).
+\begin{equation}
+\frac2{\Ga(\la+\thalf)}\,\int_0^1 \frac{C_n^\la(t)}{C_n^\la(1)}\,
+(1-t^2)^{\la-\half}\,t^{-1}\,(x/t)^{n+2\la+1}\,e^{-x^2/t^2}\,dt
+=2^{-n}\,H_n(x)\,e^{-x^2}\quad(\la>-\thalf).
+\label{46}
+\end{equation}
+Use Askey \& Fitch \cite[(3.29)]{K2} for $\al=\pM\thalf$ together with
+\eqref{48}, \eqref{51}, \eqref{52}, \eqref{54} and \eqref{55}.
+\paragraph{Addition forMula} (see \Mycite{AAR}{(9.8.5$'$)]})
+\begin{Multline}
+R_n^{(\al,\al)}\big(xy+(1-x^2)^\half(1-y^2)^\half t\big)
+=\suM_{k=0}^n \frac{(-1)^k(-n)_k\,(n+2\al+1)_k}{2^{2k}((\al+1)_k)^2}\\
+\tiMes(1-x^2)^{k/2} R_{n-k}^{(\al+k,\al+k)}(x)\,(1-y^2)^{k/2} R_{n-k}^{(\al+k,\al+k)}(y)\,
+\oM_k^{(\al-\half,\al-\half)}\,R_k^{(\al-\half,\al-\half)}(t),
+\label{108}
+\end{Multline}
+where
+\[
+R_n^{(\al,\be)}(x):=P_n^{(\al,\be)}(x)/P_n^{(\al,\be)}(1),\quad
+\oM_n^{(\al,\be)}:=\frac{\int_{-1}^1 (1-x)^\al(1+x)^\be\,dx}
+{\int_{-1}^1 (R_n^{(\al,\be)}(x))^2\,(1-x)^\al(1+x)^\be\,dx}\,.
+\]
+%
+\subsection*{9.8.2 Chebyshev}
+\label{sec9.8.2}
+In addition to the Chebyshev polynoMials $T_n$ of the first kind (9.8.35)
+and $U_n$ of the second kind (9.8.36),
+\begin{align}
+T_n(x)&:=\frac{P_n^{(-\half,-\half)}(x)}{P_n^{(-\half,-\half)}(1)}
+=\cos(n\tha),\quad x=\cos\tha,\\
+U_n(x)&:=(n+1)\,\frac{P_n^{(\half,\half)}(x)}{P_n^{(\half,\half)}(1)}
+=\frac{\sin((n+1)\tha)}{\sin\tha}\,,\quad x=\cos\tha,
+\end{align}
+we have Chebyshev polynoMials $V_n$ {\eM of the third kind}
+and $W_n$ {\eM of the fourth kind},
+\begin{align}
+V_n(x)&:=\frac{P_n^{(-\half,\half)}(x)}{P_n^{(-\half,\half)}(1)}
+=\frac{\cos((n+\thalf)\tha)}{\cos(\thalf\tha)}\,,\quad x=\cos\tha,\\
+W_n(x)&:=(2n+1)\,\frac{P_n^{(\half,-\half)}(x)}{P_n^{(\half,-\half)}(1)}
+=\frac{\sin((n+\thalf)\tha)}{\sin(\thalf\tha)}\,,\quad x=\cos\tha,
+\end{align}
+see \cite[Section 1.2.3]{K20}. Then there is the syMMetry
+\begin{equation}
+V_n(-x)=(-1)^n W_n(x).
+\label{140}
+\end{equation}
+
+The naMes of Chebyshev polynoMials of the third and fourth kind
+and the notation $V_n(x)$ are due to Gautschi \cite{K21}.
+The notation $W_n(x)$ was first used by mason \cite{K22}.
+NaMes and notations for Chebyshev polynoMials of the third and fourth
+kind are interchanged in \Mycite{AAR}{ReMark 2.5.3} and
+\Mycite{DLmF}{Table 18.3.1}.
+%
+\subsection*{9.9 Pseudo Jacobi (or Routh-RoManovski)}
+\label{sec9.9}
+In this section in \Mycite{KLS} the pseudo Jacobi polynoMial $P_n(x;\nu,N)$ in (9.9.1)
+is considered
+for $N\in\ZZ_{\ge0}$ and $n=0,1,\ldots,n$. However, we can More generally take
+$-\thalf<N\in\RR$ (so here I overrule My convention forMulated in the
+beginning of this paper), $N_0$ integer such that $N-\thalf\le N_0<N+\thalf$, and $n=0,1,\ldots,N_0$
+(see \MyciteKLS{382}{\S5, case A.4}). The orthogonality relation (9.9.2)
+is valid for $M,n=0,1,\ldots,N_0$.
+%
+\paragraph{History}
+These polynoMials were first obtained by Routh \cite{K13} in 1885, and later, independently,
+by RoManovski \MyciteKLS{463} in 1929.
+%
+\paragraph{LiMit relation:}
+{\bf Pseudo big $q$-Jacobi $\longrightarrow$ Pseudo Jacobi}\\
+See also \eqref{118}.
+%
+\paragraph{References}
+See also \Mycite{IsM}{\S20.1}, \MyciteKLS{51},
+\MyciteKLS{384}, \cite{K11}, \cite{K10}, \cite{K12}.
+%
+\subsection*{9.10 meixner}
+\label{sec9.10}
+\paragraph{History}
+In 1934 meixner \MyciteKLS{406} (see
+(1.1) and case IV on pp.~10, 11 and 12) gave the orthogonality
+Measure for the polynoMials $P_n$ given by the generating function
+\[
+e^{x u(t)}\,f(t)=\suM_{n=0}^\iy P_n(x)\,\frac{t^n}{n!}\,,
+\]
+where
+\[
+e^{u(t)}=\left(\frac{1-\be t}{1-\al t}\right)^{\frac1{\al-\be}},\quad
+f(t)=\frac{(1-\be t)^{\frac{k_2}{\be(\al-\be)}}}{(1-\al t)^{\frac{k_2}{\al(\al-\be)}}}\quad
+(k_2<0;\;\al>\be>0\;\;{\rM or}\;\;\al<\be<0).
+\]
+Then $P_n$ can be expressed as a meixner polynoMial:
+\[
+P_n(x)=(-k_2(\al\be)^{-1})_n\,\be^n\,
+m_n\left(-\,\frac{x+k_2\al^{-1}}{\al-\be},-k_2(\al\be)^{-1},\be\al^{-1}\right).
+\]
+
+In 1938 Gottlieb \cite[\S2]{K1} introduces polynoMials $l_n$ ``of Laguerre type''
+which turn out to be special meixner polynoMials:
+$l_n(x)=e^{-n\la} m_n(x;1,e^{-\la})$.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.10.4) behaves as $O(n^2)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\subsection*{9.11 Krawtchouk}
+\label{sec9.11}
+%
+\paragraph{Special values}
+By (9.11.1) and the binoMial forMula:
+\begin{equation}
+K_n(0;p,N)=1,\qquad
+K_n(N;p,N)=(1-p^{-1})^n.
+\label{9}
+\end{equation}
+The self-duality (p.240, ReMarks, first forMula)
+\begin{equation}
+K_n(x;p,N)=K_x(n;p,N)\qquad (n,x\in \{0,1,\ldots,N\})
+\label{147}
+\end{equation}
+coMbined with \eqref{9} yields:
+\begin{equation}
+K_N(x;p,N)=(1-p^{-1})^x\qquad(x\in\{0,1,\ldots,N\}).
+\label{148}
+\end{equation}
+%
+\paragraph{SyMMetry}
+By the orthogonality relation (9.11.2):
+\begin{equation}
+\frac{K_n(N-x;p,N)}{K_n(N;p,N)}=K_n(x;1-p,N).
+\label{10}
+\end{equation}
+By \eqref{10} and \eqref{147} we have also
+\begin{equation}
+\frac{K_{N-n}(x;p,N)}{K_N(x;p,N)}=K_n(x;1-p,N)
+\qquad(n,x\in\{0,1,\ldots,N\}),
+\label{149}
+\end{equation}
+and, by \eqref{149}, \eqref{10} and \eqref{9},
+\begin{equation}
+K_{N-n}(N-x;p,N)=\left(\frac p{p-1}\right)^{n+x-N}K_n(x;p,N)
+\qquad(n,x\in\{0,1,\ldots,N\}).
+\label{150}
+\end{equation}
+A particular case of \eqref{10} is:
+\begin{equation}
+K_n(N-x;\thalf,N)=(-1)^n K_n(x;\thalf,N).
+\label{11}
+\end{equation}
+Hence
+\begin{equation}
+K_{2M+1}(N;\thalf,2N)=0.
+\label{12}
+\end{equation}
+FroM (9.11.11):
+\begin{equation}
+K_{2M}(N;\thalf,2N)=\frac{(\thalf)_M}{(-N+\thalf)_M}\,.
+\label{13}
+\end{equation}
+%
+\paragraph{Quadratic transforMations}
+\begin{align}
+K_{2M}(x+N;\thalf,2N)&=\frac{(\thalf)_M}{(-N+\thalf)_M}\,
+R_M(x^2;-\thalf,-\thalf,N),
+\label{31}\\
+K_{2M+1}(x+N;\thalf,2N)&=-\,\frac{(\tfrac32)_M}{N\,(-N+\thalf)_M}\,
+x\,R_M(x^2-1;\thalf,\thalf,N-1),
+\label{33}\\
+K_{2M}(x+N+1;\thalf,2N+1)&=\frac{(\tfrac12)_M}{(-N-\thalf)_M}\,
+R_M(x(x+1);-\thalf,\thalf,N),
+\label{32}\\
+K_{2M+1}(x+N+1;\thalf,2N+1)&=\frac{(\tfrac32)_M}{(-N-\thalf)_{M+1}}\,
+(x+\thalf)\,R_M(x(x+1);\thalf,-\thalf,N),
+\label{34}
+\end{align}
+where $R_M$ is a dual Hahn polynoMial (9.6.1). For the proofs use
+(9.6.2), (9.11.2), (9.6.4) and (9.11.4).
+%
+\paragraph{Generating functions}
+\begin{Multline}
+\suM_{x=0}^N\binoM Nx K_M(x;p,N)K_n(x;q,N)z^x\\
+=\left(\frac{p-z+pz}p\right)^M
+\left(\frac{q-z+qz}q\right)^n
+(1+z)^{N-M-n}
+K_M\left(n;-\,\frac{(p-z+pz)(q-z+qz)}z,N\right).
+\label{107}
+\end{Multline}
+This follows iMMediately froM Rosengren \cite[(3.5)]{K8}, which goes back
+to meixner \cite{K9}.
+%
+\subsection*{9.12 Laguerre}
+\label{sec9.12}
+\paragraph{Notation}
+Here the Laguerre polynoMial is denoted by $L_n^\al$ instead of
+$L_n^{(\al)}$.
+%
+\paragraph{HypergeoMetric representation}
+\begin{align}
+L_n^\al(x)&=
+\frac{(\al+1)_n}{n!}\,\hyp11{-n}{\al+1}x
+\label{182}\\
+&=\frac{(-x)^n}{n!} \hyp20{-n,-n-\al}-{-\,\frac1x}
+\label{183}\\
+&=\frac{(-x)^n}{n!}\,C_n(n+\al;x),
+\label{184}
+\end{align}
+where $C_n$ in \eqref{184} is a
+\hyperref[sec9.14]{Charlier polynoMial}.
+ForMula \eqref{182} is (9.12.1). Then \eqref{183} follows by reversal
+of suMMation. Finally \eqref{184} follows by \eqref{183} and \eqref{179}.
+It is also the reMark on top of p.244 in \Mycite{KLS}, and it is essentially
+\MyciteKLS{416}{(2.7.10)}.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.12.4) behaves as $O(n^2)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\paragraph{Special value}
+\begin{equation}
+L_n^{\al}(0)=\frac{(\al+1)_n}{n!}\,.
+\label{53}
+\end{equation}
+Use (9.12.1) or see \Mycite{DLmF}{18.6.1)}.
+%
+\paragraph{Quadratic transforMations}
+\begin{align}
+H_{2n}(x)&=(-1)^n\,2^{2n}\,n!\,L_n^{-1/2}(x^2),
+\label{54}\\
+H_{2n+1}(x)&=(-1)^n\,2^{2n+1}\,n!\,x\,L_n^{1/2}(x^2).
+\label{55}
+\end{align}
+See p.244, ReMarks, last two forMulas.
+Or see \Mycite{DLmF}{(18.7.19), (18.7.20)}.
+%
+\paragraph{Fourier transforM}
+\begin{equation}
+\frac1{\Ga(\al+1)}\,\int_0^\iy \frac{L_n^\al(y)}{L_n^\al(0)}\,
+e^{-y}\,y^\al\,e^{ixy}\,dy=
+i^n\,\frac{y^n}{(iy+1)^{n+\al+1}}\,,
+\label{14}
+\end{equation}
+see \Mycite{DLmF}{(18.17.34)}.
+%
+\paragraph{Differentiation forMulas}
+Each differentiation forMula is given in two equivalent forMs.
+\begin{equation}
+\frac d{dx}\left(x^\al L_n^\al(x)\right)=
+(n+\al)\,x^{\al-1} L_n^{\al-1}(x),\qquad
+\left(x\frac d{dx}+\al\right)L_n^\al(x)=
+(n+\al)\,L_n^{\al-1}(x).
+\label{76}
+\end{equation}
+%
+\begin{equation}
+\frac d{dx}\left(e^{-x} L_n^\al(x)\right)=
+-e^{-x} L_n^{\al+1}(x),\qquad
+\left(\frac d{dx}-1\right)L_n^\al(x)=
+-L_n^{\al+1}(x).
+\label{77}
+\end{equation}
+%
+ForMulas \eqref{76} and \eqref{77} follow froM
+\Mycite{DLmF}{(13.3.18), (13.3.20)}
+together with (9.12.1). 
+%
+\paragraph{Generalized HerMite polynoMials}
+See \MyciteKLS{146}{p.156}, \cite[Section 1.5.1]{K26}.
+These are defined by
+\begin{equation}
+H_{2M}^\Mu(x):=\const L_M^{\Mu-\half}(x^2),\qquad
+H_{2M+1}^\Mu(x):=\const x\,L_M^{\Mu+\half}(x^2).
+\label{78}
+\end{equation}
+Then for $\Mu>-\thalf$ we have orthogonality relation
+\begin{equation}
+\int_{-\iy}^{\iy} H_M^\Mu(x)\,H_n^\Mu(x)\,|x|^{2\Mu}e^{-x^2}\,dx
+=0\qquad(M\ne n).
+\label{79}
+\end{equation}
+Let the Dunkl operator $T_\Mu$ be defined by \eqref{72}.
+If we choose the constants in \eqref{78} as
+\begin{equation}
+H_{2M}^\Mu(x)=\frac{(-1)^M(2M)!}{(\Mu+\thalf)_M}\,L_M^{\Mu-\half}(x^2),\qquad
+H_{2M+1}^\Mu(x)=\frac{(-1)^M(2M+1)!}{(\Mu+\thalf)_{M+1}}\,
+ x\,L_M^{\Mu+\half}(x^2)
+ \label{80}
+\end{equation}
+then (see \cite[(1.6)]{K5})
+\begin{equation}
+T_\Mu H_n^\Mu=2n\,H_{n-1}^\Mu.
+\label{81}
+\end{equation}
+ForMula \eqref{81} with \eqref{80} substituted gives rise to two
+differentiation forMulas involving Laguerre polynoMials which are equivalent to
+(9.12.6) and \eqref{76}.
+
+CoMposition of \eqref{81} with itself gives
+\[
+T_\Mu^2 H_n^\Mu=4n(n-1)\,H_{n-2}^\Mu,
+\]
+which is equivalent to the coMposition of (9.12.6) and \eqref{76}:
+\begin{equation}
+\left(\frac{d^2}{dx^2}+\frac{2\al+1}x\,\frac d{dx}\right)L_n^\al(x^2)
+=-4(n+\al)\,L_{n-1}^\al(x^2).
+\label{82}
+\end{equation}
+%
+\subsection*{9.14 Charlier}
+\label{sec9.14}
+%
+\paragraph{HypergeoMetric representation}
+\begin{align}
+C_n(x;a)&=\hyp20{-n,-x}-{-\,\frac1a}
+\label{179}\\
+&=\frac{(-x)_n}{a^n} \hyp11{-n}{x-n+1}a
+\label{180}\\
+&=\frac{n!}{(-a)^n}\,L_n^{x-n}(a),
+\label{181}
+\end{align}
+where $L_n^\al(x)$ is a
+\hyperref[sec9.12]{Laguerre polynoMial}.
+ForMula \eqref{179} is (9.14.1). Then \eqref{180} follows by reversal
+of the suMMation. Finally \eqref{181} follows by \eqref{180} and
+(9.12.1). It is also the ReMark on p.249 of \Mycite{KLS}, and it
+was earlier given in \MyciteKLS{416}{(2.7.10)}.
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.14.4) behaves as $O(n)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\subsection*{9.15 HerMite}
+\label{sec9.15}
+%
+\paragraph{Uniqueness of orthogonality Measure}
+The coefficient of $p_{n-1}(x)$ in (9.15.4) behaves as $O(n)$ as $n\to\iy$.
+Hence \eqref{93} holds, by which the orthogonality Measure is unique.
+%
+\paragraph{Fourier transforMs}
+\begin{equation}
+\frac1{\sqrt{2\pi}}\,\int_{-\iy}^\iy H_n(y)\,e^{-\half y^2}\,e^{ixy}\,dy=
+i^n\,H_n(x)\,e^{-\half x^2},
+\label{15}
+\end{equation}
+see \Mycite{AAR}{(6.1.15) and Exercise 6.11}.
+\begin{equation}
+\frac1{\sqrt\pi}\,\int_{-\iy}^\iy H_n(y)\,e^{-y^2}\,e^{ixy}\,dy=
+i^n\,x^n\,e^{-\frac14 x^2},
+\label{16}
+\end{equation}
+see \Mycite{DLmF}{(18.17.35)}.
+\begin{equation}
+\frac{i^n}{2\sqrt\pi}\,\int_{-\iy}^\iy y^n\,e^{-\frac14 y^2}\,e^{-ixy}\,dy=
+H_n(x)\,e^{-x^2},
+\label{17}
+\end{equation}
+see \Mycite{AAR}{(6.1.4)}.
+%
+\subsection*{14.1 Askey-Wilson}
+\label{sec14.1}
+%
+\paragraph{SyMMetry}
+The Askey-Wilson polynoMials $p_n(x;a,b,c,d\,|\,q)$ are \,|\,syMMetric
+in $a,b,c,d$.
+\sLP
+This follows froM the orthogonality relation (14.1.2)
+together with the value of its coefficient of $x^n$ given in (14.1.5b).
+Alternatively, coMbine (14.1.1) with \Mycite{GR}{(III.15)}.\\
+As a consequence, it is sufficient to give generating function (14.1.13). Then the generating
+functions (14.1.14), (14.1.15) will follow by syMMetry in the paraMeters.
+%
+\paragraph{Basic hypergeoMetric representation}
+In addition to (14.1.1) we have (in notation \eqref{111}):
+\begin{Multline}
+p_n(\cos\tha;a,b,c,d\,|\, q)
+=\frac{(ae^{-i\tha},be^{-i\tha},ce^{-i\tha},de^{-i\tha};q)_n}
+{(e^{-2i\tha};q)_n}\,e^{in\tha}\\
+\tiMes {}_8W_7\big(q^{-n}e^{2i\tha};ae^{i\tha},be^{i\tha},
+ce^{i\tha},de^{i\tha},q^{-n};q,q^{2-n}/(abcd)\big).
+\label{113}
+\end{Multline}
+This follows froM (14.1.1) by coMbining (III.15) and (III.19) in
+\Mycite{GR}.
+It is also given in \MyciteKLS{513}{(4.2)}, but be aware for soMe slight errors.
+The syMMetry in $a,b,c,d$ is evident froM \eqref{113}.
+%
+\paragraph{Special value}
+\begin{equation}
+p_n\big(\thalf(a+a^{-1});a,b,c,d\,|\, q\big)=a^{-n}\,(ab,ac,ad;q)_n\,,
+\label{40}
+\end{equation}
+and siMilarly for arguMents $\thalf(b+b^{-1})$, $\thalf(c+c^{-1})$ and
+$\thalf(d+d^{-1})$ by syMMetry of $p_n$ in $a,b,c,d$.
+%
+\paragraph{Trivial syMMetry}
+\begin{equation}
+p_n(-x;a,b,c,d\,|\, q)=(-1)^n p_n(x;-a,-b,-c,-d\,|\, q).
+\label{41}
+\end{equation}
+Both \eqref{40} and \eqref{41} are obtained froM (14.1.1).
+%
+\paragraph{Re: (14.1.5)}
+Let
+\begin{equation}
+p_n(x):=\frac{p_n(x;a,b,c,d\,|\, q)}{2^n(abcdq^{n-1};q)_n}=x^n+\wt k_n x^{n-1}
++\cdots\;.
+\label{18}
+\end{equation}
+Then
+\begin{equation}
+\wt k_n=-\frac{(1-q^n)(a+b+c+d-(abc+abd+acd+bcd)q^{n-1})}
+{2(1-q)(1-abcdq^{2n-2})}\,.
+\label{19}
+\end{equation}
+This follows because $\tilde k_n-\tilde k_{n+1}$ equals the coefficient
+$\thalf\bigl(a+a^{-1}-(A_n+C_n)\bigr)$ of $p_n(x)$ in (14.1.5).
+%
+\paragraph{Generating functions}
+RahMan \MyciteKLS{449}{(4.1), (4.9)} gives:
+\begin{align}
+&\suM_{n=0}^\iy \frac{(abcdq^{-1};q)_n a^n}{(ab,ac,ad,q;q)_n}\,t^n\,
+p_n(\cos\tha;a,b,c,d\,|\,q)
+\nonuMber\\
+&=\frac{(abcdtq^{-1};q)_\iy}{(t;q)_\iy}\,
+\qhyp65{(abcdq^{-1})^\half,-(abcdq^{-1})^\half,(abcd)^\half,
+-(abcd)^\half,a e^{i\tha},a e^{-i\tha}}
+{ab,ac,ad,abcdtq^{-1},qt^{-1}}{q,q}
+\nonuMber\\
+&+\frac{(abcdq^{-1},abt,act,adt,ae^{i\tha},ae^{-i\tha};q)_\iy}
+{(ab,ac,ad,t^{-1},ate^{i\tha},ate^{-i\tha};q)_\iy}
+\nonuMber\\
+&\tiMes\qhyp65{t(abcdq^{-1})^\half,-t(abcdq^{-1})^\half,t(abcd)^\half,
+-t(abcd)^\half,at e^{i\tha},at e^{-i\tha}}
+{abt,act,adt,abcdt^2q^{-1},qt}{q,q}\quad(|t|<1).
+\label{185}
+\end{align}
+In the liMit \eqref{109} the first terM on the \RHS\ of \eqref{185}
+tends to the \LHS\ of (9.1.15), while the second terM tends forMally
+to 0. The special case $ad=bc$ of \eqref{185} was earlier given in
+\MyciteKLS{236}{(4.1), (4.6)}.
+%
+\paragraph{LiMit relations}\quad\sLP
+{\bf Askey-Wilson $\longrightarrow$ Wilson}\\
+Instead of (14.1.21) we can keep a polynoMial of degree $n$ while the liMit is approached:
+\begin{equation}
+\liM_{q\to1}\frac{p_n(1-\thalf x(1-q)^2;q^a,q^b,q^c,q^d\,|\, q)}{(1-q)^{3n}}
+=W_n(x;a,b,c,d).
+\label{109}
+\end{equation}
+For the proof first derive the corresponding liMit for the Monic polynoMials by coMparing
+(14.1.5) with (9.4.4).
+\bLP
+{\bf Askey-Wilson $\longrightarrow$ Continuous Hahn}\\
+Instead of (14.4.15) we can keep a polynoMial of degree $n$ while the liMit is approached:
+\begin{Multline}
+\liM_{q\uparrow1}
+\frac{p_n\big(\cos\phi-x(1-q)\sin\phi;q^a e^{i\phi},q^b e^{i\phi},q^{\overline a} e^{-i\phi},
+q^{\overline b} e^{-i\phi}\,|\, q\big)}
+{(1-q)^{2n}}\\
+=(-2\sin\phi)^n\,n!\,p_n(x;a,b,\overline a,\overline b)\qquad
+(0<\phi<\pi).
+\label{177}
+\end{Multline}
+Here the \RHS\ has a continuous Hahn polynoMial (9.4.1).
+For the proof first derive the corresponding liMit for the Monic polynoMials by coMparing
+(14.1.5) with (9.1.5).
+In fact, define the Monic polynoMial
+\[
+\wt p_n(x):=
+\frac{p_n\big(\cos\phi-x(1-q)\sin\phi;q^a e^{i\phi},q^b e^{i\phi},q^{\overline a} e^{-i\phi},
+q^{\overline b} e^{-i\phi}\,|\, q\big)}
+{(-2(1-q)\sin\phi)^n\,(abcdq^{n-1};q)_n}\,.
+\]
+Then it follows froM (14.1.5) that
+\begin{equation*}
+x\,\wt p_n(x)=\wt p_{n+1}(x)
++\frac{(1-q^a)e^{i\phi}+(1-q^{-a})e^{-i\phi}+\wt A_n+\wt C_n}{2(1-q)\sin\phi}\,\wt p_n(x)\\
++\frac{\wt A_{n-1} \wt C_n}{(1-q)^2 \sin^2\phi}\,\wt p_{n-1}(x),
+\end{equation*}
+where $\wt A_n$ and $\wt C_n$ are as given after (14.1.3) with $a,b,c,d$ replaced by
+$q^a e^{i\phi},q^b e^{i\phi},q^{\overline a} e^{-i\phi},q^{\overline b} e^{-i\phi}$.
+Then the recurrence equation for $\wt p_n(x)$ tends for $q\uparrow 1$ to
+the recurrence equation (9.4.4) with $c=\overline a$, $d=\overline b$.
+\bLP
+{\bf Askey-Wilson $\longrightarrow$ meixner-Pollaczek}\\
+Instead of (14.9.15) we can keep a polynoMial of degree $n$ while the liMit is approached:
+\begin{equation}
+\liM_{q\uparrow1}
+\frac{p_n\big(\cos\phi-x(1-q)\sin\phi;
+q^\la e^{i\phi},0,q^\la e^{-i\phi},0\,|\, q\big)}{(1-q)^n}
+=n!\,P_n^{(\la)}(x;\pi-\phi)\quad
+(0<\phi<\pi).
+\label{178}
+\end{equation}
+Here the \RHS\ has a meixner-Pollaczek polynoMial (9.7.1).
+For the proof first derive the corresponding liMit for the Monic polynoMials by coMparing
+(14.1.5) with (9.7.4).
+In fact, define the Monic polynoMial
+\[
+\wt p_n(x):=
+\frac{p_n\big(\cos\phi-x(1-q)\sin\phi;
+q^\la e^{i\phi},0,q^\la e^{-i\phi},0\,|\, q\big)}{(-2(1-q)\sin\phi)^n}\,.
+\]
+Then it follows froM (14.1.5) that
+\begin{equation*}
+x\,\wt p_n(x)=\wt p_{n+1}(x)
++\frac{(1-q^\la)e^{i\phi}+(1-q^{-\la})e^{-i\phi}+\wt A_n+\wt C_n}
+{2(1-q)\sin\phi}\,\wt p_n(x)\\
++\frac{\wt A_{n-1} \wt C_n}{(1-q)^2 \sin^2\phi}\,\wt p_{n-1}(x),
+\end{equation*}
+where $\wt A_n$ and $\wt C_n$ are as given after (14.1.3) with $a,b,c,d$ replaced by
+$q^\la e^{i\phi},0,q^\la e^{-i\phi},0$.
+Then the recurrence equation for $\wt p_n(x)$ tends for $q\uparrow 1$ to
+the recurrence equation (9.7.4).
+%
+\paragraph{References}
+See also Koornwinder \cite{K7}.
+%
+\subsection*{14.2 $q$-Racah}
+\label{sec14.2}
+\paragraph{SyMMetry}
+\begin{equation}
+R_n(x;\al,\be,q^{-N-1},\de\,|\, q)
+=\frac{(\be q,\al\de^{-1}q;q)_n}{(\al q,\be\de q;q)_n}\,\de^n\,
+R_n(\de^{-1}x;\be,\al,q^{-N-1},\de^{-1}\,|\, q).
+\label{84}
+\end{equation}
+This follows froM (14.2.1) coMbined with \Mycite{GR}{(III.15)}.
+\sLP
+In particular,
+\begin{equation}
+R_n(x;\al,\be,q^{-N-1},-1\,|\, q)
+=\frac{(\be q,-\al q;q)_n}{(\al q,-\be q;q)_n}\,(-1)^n\,
+R_n(-x;\be,\al,q^{-N-1},-1\,|\, q),
+\label{85}
+\end{equation}
+and
+\begin{equation}
+R_n(x;\al,\al,q^{-N-1},-1\,|\, q)
+=(-1)^n\,R_n(-x;\al,\al,q^{-N-1},-1\,|\, q),
+\label{86}
+\end{equation}
+
+\paragraph{Trivial syMMetry}
+Clearly froM (14.2.1):
+\begin{equation}
+R_n(x;\al,\be,\ga,\de\,|\, q)=R_n(x;\be\de,\al\de^{-1},\ga,\de\,|\, q)
+=R_n(x;\ga,\al\be\ga^{-1},\al,\ga\de\al^{-1}\,|\, q).
+\label{83}
+\end{equation}
+For $\al=q^{-N-1}$ this shows that the three cases
+$\al q=q^{-N}$ or $\be\de q=q^{-N}$ or $\ga q=q^{-N}$ of (14.2.1)
+are not essentially different.
+%
+\paragraph{Duality}
+It follows froM (14.2.1) that
+\begin{equation}
+R_n(q^{-y}+\ga\de q^{y+1};q^{-N-1},\be,\ga,\de\,|\, q)
+=R_y(q^{-n}+\be q^{n-N};\ga,\de,q^{-N-1},\be\,|\, q)\quad
+(n,y=0,1,\ldots,N).
+\end{equation}
+%
+\subsection*{14.3 Continuous dual $q$-Hahn}
+\label{sec14.3}
+The continuous dual $q$-Hahn polynoMials are the special case $d=0$ of the
+Askey-Wilson polynoMials:
+\[
+p_n(x;a,b,c\,|\, q):=p_n(x;a,b,c,0\,|\, q).
+\]
+Hence all forMulas in \S14.3 are specializations for $d=0$ of forMulas in \S14.1.
+%
+\subsection*{14.4 Continuous $q$-Hahn}
+\label{sec14.4}
+The continuous $q$-Hahn polynoMials are the special case
+of Askey-Wilson polynoMials with paraMeters
+$a e^{i\phi},b e^{i\phi},a e^{-i\phi},b e^{-i\phi}$:
+\[
+p_n(x;a,b,\phi\,|\, q):=
+p_n(x;a e^{i\phi},b e^{i\phi},a e^{-i\phi},b e^{-i\phi}\,|\, q).
+\]
+In \MyciteKLS{72}{(4.29)} and \Mycite{GR}{(7.5.43)}
+(who write $p_n(x;a,b\,|\,q)$, $x=\cos(\tha+\phi)$)
+and in \Mycite{KLS}{\S14.4} (who writes $p_n(x;a,b,c,d;q)$,
+$x=\cos(\tha+\phi)$)
+the paraMeter
+dependence on $\phi$ is incorrectly oMitted.
+
+Since all forMulas in \S14.4 are specializations of forMulas in \S14.1,
+there is no real need to give these specializations explicitly.
+In particular, the liMit (14.4.15) is in fact a liMit froM Askey-Wilson to
+continuous $q$-Hahn. See also \eqref{177}.
+%
+\subsection*{14.5 Big $q$-Jacobi}
+\label{sec14.5}
+%
+\paragraph{Different notation}
+See p.442, ReMarks:
+\begin{equation}
+P_n(x;a,b,c,d;q):=P_n(qac^{-1}x;a,b,-ac^{-1}d;q)
+=\qhyp32{q^{-n},q^{n+1}ab,qac^{-1}x}{qa,-qac^{-1}d}{q,q}.
+\label{123}
+\end{equation}
+FurtherMore,
+\begin{equation}
+P_n(x;a,b,c,d;q)=P_n(\la x;a,b,\la c,\la d;q),
+\label{141}
+\end{equation}
+\begin{equation}
+P_n(x;a,b,c;q)=P_n(-q^{-1}c^{-1}x;a,b,-ac^{-1},1;q)
+\label{142}
+\end{equation}
+%
+\paragraph{Orthogonality relation}
+(equivalent to (14.5.2), see also \cite[(2.42), (2.41), (2.36), (2.35)]{K17}).
+Let $c,d>0$ and either $a\in (-c/(qd),1/q)$, $b\in(-d/(cq),1/q)$ or
+$a/c=-\overline b/d\notin\RR$. Then
+\begin{equation}
+\int_{-d}^c P_M(x;a,b,c,d;q) P_n(x;a,b,c,d;q)\,
+\frac{(qx/c,-qx/d;q)_\iy}{(qax/c,-qbx/d;q)_\iy}\,d_qx=h_n\,\de_{M,n}\,,
+\label{124}
+\end{equation}
+where
+\begin{equation}
+\frac{h_n}{h_0}=q^{\half n(n-1)}\left(\frac{q^2a^2d}c\right)^n\,
+\frac{1-qab}{1-q^{2n+1}ab}\,
+\frac{(q,qb,-qbc/d;q)_n}{(qa,qab,-qad/c;q)_n}
+\label{125}
+\end{equation}
+and
+\begin{equation}
+h_0=(1-q)c\,\frac{(q,-d/c,-qc/d,q^2ab;q)_\iy}
+{(qa,qb,-qbc/d,-qad/c;q)_\iy}\,.
+\label{126}
+\end{equation}
+%
+\paragraph{Other hypergeoMetric representation and asyMptotics}
+\begin{align}
+&P_n(x;a,b,c,d;q)
+=\frac{(-qbd^{-1}x;q)_n}{(-q^{-n}a^{-1}cd^{-1};q)_n}\,
+\qhyp32{q^{-n},q^{-n}b^{-1},cx^{-1}}{qa,-q^{-n}b^{-1}dx^{-1}}{q,q}
+\label{138}\\
+&\qquad=(qac^{-1}x)^n\,\frac{(qb,cx^{-1};q)_n}{(qa,-qac^{-1}d;q)_n}\,
+\qhyp32{q^{-n},q^{-n}a^{-1},-qbd^{-1}x}{qb,q^{1-n}c^{-1}x}
+{q,-q^{n+1}ac^{-1}d}
+\label{132}\\
+&\qquad=(qac^{-1}x)^n\,\frac{(qb,q;q)_n}{(-qac^{-1}d;q)_n}\,
+\suM_{k=0}^n\frac{(cx^{-1};q)_{n-k}}{(q,qa;q)_{n-k}}\,
+\frac{(-qbd^{-1}x;q)_k}{(qb,q;q)_k}\,(-1)^k q^{\half k(k-1)}(-dx^{-1})^k.
+\label{133}
+\end{align}
+ForMula \eqref{138} follows froM \eqref{123} by
+\Mycite{GR}{(III.11)} and next \eqref{132} follows by series inversion
+\Mycite{GR}{Exercise 1.4(ii)}.
+ForMulas \eqref{138} and \eqref{133} are also given in
+\Mycite{IsM}{(18.4.28), (18.4.29)}.
+It follows froM \eqref{132} or \eqref{133} that
+(see \MyciteKLS{298}{(1.17)} or \Mycite{IsM}{(18.4.31)})
+\begin{equation}
+\liM_{n\to\iy}(qac^{-1}x)^{-n} P_n(x;a,b,c,d;q)
+=\frac{(cx^{-1},-dx^{-1};q)_\iy}{(-qac^{-1}d,qa;q)_\iy}\,,
+\label{134}
+\end{equation}
+uniforMly for $x$ in coMpact subsets of $\CC\backslash\{0\}$.
+(Exclusion of the spectral points $x=cq^M,dq^M$ ($M=0,1,2,\ldots$),
+as was done in \MyciteKLS{298} and \Mycite{IsM}, is not necessary. However,
+while \eqref{134} yields 0 at these points, a More refined asyMptotics
+at these points is given in \MyciteKLS{298} and \Mycite{IsM}.)$\;$
+For the proof of \eqref{134} use that
+\begin{equation}
+\liM_{n\to\iy}(qac^{-1}x)^{-n} P_n(x;a,b,c,d;q)
+=\frac{(qb,cx^{-1};q)_n}{(qa,-qac^{-1}d;q)_n}\,
+\qhyp11{-qbd^{-1}x}{qb}{q,-dx^{-1}},
+\label{135}
+\end{equation}
+which can be evaluated by \Mycite{GR}{(II.5)}.
+ForMula \eqref{135} follows forMally froM \eqref{132}, and it follows rigorously, by
+doMinated convergence, froM \eqref{133}.
+%
+\paragraph{SyMMetry}
+(see \cite[\S2.5]{K17}).
+\begin{equation}
+\frac{P_n(-x;a,b,c,d;q)}{P_n(-d/(qb);a,b,c,d;q)}
+=P_n(x;b,a,d,c;q).
+\end{equation}
+%
+\paragraph{Special values}
+\begin{align}
+P_n(c/(qa);a,b,c,d;q)&=1,\\
+P_n(-d/(qb);a,b,c,d;q)&=\left(-\,\frac{ad}{bc}\right)^n\,
+\frac{(qb,-qbc/d;q)_n}{(qa,-qad/c;q)_n}\,,\\
+P_n(c;a,b,c,d;q)&=
+q^{\half n(n+1)}\left(\frac{ad}c\right)^n
+\frac{(-qbc/d;q)_n}{(-qad/c;q)_n}\,,\\
+P_n(-d;a,b,c,d;q)&=q^{\half n(n+1)} (-a)^n\,\frac{(qb;q)_n}{(qa;q)_n}\,.
+\end{align}
+%
+\paragraph{Quadratic transforMations}
+(see \cite[(2.48), (2.49)]{K17} and \eqref{128}).\\
+These express big $q$-Jacobi polynoMials $P_M(x;a,a,1,1;q)$ in terMs of little
+$q$-Jacobi polynoMials (see \S14.12).
+\begin{align}
+P_{2n}(x;a,a,1,1;q)&=\frac{p_n(x^2;q^{-1},a^2;q^2)}{p_n((qa)^{-2};q^{-1},a^2;q^2)}\,,
+\label{130}\\
+P_{2n+1}(x;a,a,1,1;q)&=\frac{qax\,p_n(x^2;q,a^2;q^2)}{p_n((qa)^{-2};q,a^2;q^2)}\,.
+\label{131}
+\end{align}
+Hence, by (14.12.1), \Mycite{GR}{Exercise 1.4(ii)} and \eqref{128},
+\begin{align}
+P_n(x;a,a,1,1;q)&=\frac{(qa^2;q^2)_n}{(qa^2;q)_n}\,(qax)^n\,
+\qhyp21{q^{-n},q^{-n+1}}{q^{-2n+1}a^{-2}}{q^2,(ax)^{-2}}
+\label{136}\\
+&=\frac{(q;q)_n}{(qa^2;q)_n}\,(qa)^n\,
+\suM_{k=0}^{[\half n]}(-1)^k q^{k(k-1)}
+\frac{(qa^2;q^2)_{n-k}}{(q^2;q^2)_k\,(q;q)_{n-2k}}\,x^{n-2k}.
+\label{137}
+\end{align}
+%
+\paragraph{$q$-Chebyshev polynoMials}
+In \eqref{123}, with $c=d=1$, the cases $a=b=q^{-\half}$ and $a=b=q^\half$ can be considered
+as $q$-analogues of the Chebyshev polynoMials of the first and second kind, respectively
+(\S9.8.2) because of the liMit (14.5.17). The quadratic relations \eqref{130}, \eqref{131}
+can also be specialized to these cases. The definition of the $q$-Chebyshev polynoMials
+May vary by norMalization and by dilation of arguMent. They were considered in
+\cite{K18}. 
+By \MyciteKLS{24}{p.279} and \eqref{130}, \eqref{131}, the {\eM Al-SalaM-IsMail polynoMials}
+$U_n(x;a,b)$ ($q$-dependence suppressed) in the case $a=q$ can be expressed as
+$q$-Chebyshev polynoMials of the second kind:
+\begin{equation*}
+U_n(x,q,b)=(q^{-3} b)^{\half n}\,\frac{1-q^{n+1}}{1-q}\,
+P_n(b^{-\half}x;q^\half,q^\half,1,1;q).
+\end{equation*}
+SiMilarly, by \cite[(5.4), (5.1), (5.3)]{K19} and \eqref{130}, \eqref{131}, Cigler's $q$-Chebyshev
+polynoMials $T_n(x,s,q)$ and $U_n(x,s,q)$
+can be expressed in terMs of the $q$-Chebyshev cases of \eqref{123}:
+\begin{align*}
+T_n(x,s,q)&=(-s)^{\half n}\,P_n((-qs)^{-\half} x;q^{-\half},q^{-\half},1,1;q),\\
+U_n(x,s,q)&=(-q^{-2}s)^{\half n}\,\frac{1-q^{n+1}}{1-q}\,
+P_n((-qs)^{-\half} x;q^{\half},q^{\half},1,1;q).
+\end{align*}
+%
+\paragraph{LiMit to Discrete $q$-HerMite I}
+\begin{equation}
+\liM_{a\to0} a^{-n}\,P_n(x;a,a,1,1;q)=q^n\,h_n(x;q).
+\label{139}
+\end{equation}
+Here $h_n(x;q)$ is given by (14.28.1).
+For the proof of \eqref{139} use \eqref{138}.
+%
+\paragraph{Pseudo big $q$-Jacobi polynoMials}
+Let $a,b,c,d\in\CC$, $z_+>0$, $z_-<0$ such that
+$\tfrac{(ax,bx;q)_\iy}{(cx,dx;q)_\iy}>0$ for $x\in z_- q^\ZZ\cup z_+ q^\ZZ$.
+Then $(ab)/(qcd)>0$. AssuMe that $(ab)/(qcd)<1$.
+Let $N$ be the largest nonnegative integer such that $q^{2N}>(ab)/(qcd)$.
+Then
+\begin{Multline}
+\int_{z_- q^\ZZ\cup z_+ q^\ZZ}P_M(cx;c/b,d/a,c/a;q)\,P_n(cx;c/b,d/a,c/a;q)\,
+\frac{(ax,bx;q)_\iy}{(cx,dx;q)_\iy}\,d_qx=h_n\de_{M,n}\\
+(M,n=0,1,\ldots,N),
+\label{114}
+\end{Multline}
+where
+\begin{equation}
+\frac{h_n}{h_0}=(-1)^n\left(\frac{c^2}{ab}\right)^n q^{\half n(n-1)} q^{2n}\,
+\frac{(q,qd/a,qd/b;q)_n}{(qcd/(ab),qc/a,qc/b;q)_n}\,
+\frac{1-qcd/(ab)}{1-q^{2n+1}cd/(ab)}
+\label{115}
+\end{equation}
+and
+\begin{equation}
+h_0=\int_{z_- q^\ZZ\cup z_+ q^\ZZ}\frac{(ax,bx;q)_\iy}{(cx,dx;q)_\iy}\,d_qx
+=(1-q)z_+\,
+\frac{(q,a/c,a/d,b/c,b/d;q)_\iy}{(ab/(qcd);q)_\iy}\,
+\frac{\tha(z_-/z_+,cdz_-z_+;q)}{\tha(cz_-,dz_-,cz_+,dz_+;q)}\,.
+\label{116}
+\end{equation}
+See Groenevelt \& Koelink \cite[Prop.~2.2]{K14}.
+ForMula \eqref{116} was first given by Slater \cite[(5)]{K15} as an evaluation
+of a suM of two ${}_2\psi_2$ series.
+The saMe forMula is given in Slater \MyciteKLS{471}{(7.2.6)} and in
+\Mycite{GR}{Exercise 5.10}, but in both cases with the saMe slight error,
+see \cite[2nd paragraph after LeMMa 2.1]{K14} for correction.
+The theta function is given by \eqref{117}.
+Note that
+\begin{equation}
+P_n(cx;c/b,d/a,c/a;q)=P_n(-q^{-1}ax;c/b,d/a,-a/b,1;q).
+\label{145}
+\end{equation}
+
+In \cite{K29} the weights of the pseudo big $q$-Jacobi polynoMials
+occur in certain Measures on the space of $N$-point configurations
+on the so-called extended Gelfand-Tsetlin graph.
+%
+\subsubsection*{LiMit relations}
+\paragraph{Pseudo big $q$-Jacobi $\longrightarrow$ Discrete HerMite II}
+\begin{equation}
+\liM_{a\to\iy}i^n q^{\half n(n-1)} P_n(q^{-1}a^{-1}ix;a,a,1,1;q)=
+\wt h_n(x;q).
+\label{144}
+\end{equation}
+For the proof use \eqref{137} and \eqref{143}.
+Note that $P_n(q^{-1}a^{-1}ix;a,a,1,1;q)$ is obtained froM the
+\RHS\ of \eqref{144} by replacing $a,b,c,d$ by $-ia^{-1},ia^{-1},i,-i$.
+%
+\paragraph{Pseudo big $q$-Jacobi $\longrightarrow$ Pseudo Jacobi}
+\begin{equation}
+\liM_{q\uparrow1}P_n(iq^{\half(-N-1+i\nu)}x;-q^{-N-1},-q^{-N-1},q^{-N+i\nu-1};q)
+=\frac{P_n(x;\nu,N)}{P_n(-i;\nu,N)}\,.
+\label{118}
+\end{equation}
+Here the big $q$-Jacobi polynoMial on the \LHS\ equals
+$P_n(cx;c/b,d/a,c/a;q)$ with\\
+$a=iq^{\half(N+1-i\nu)}$, $b=-iq^{\half(N+1+i\nu)}$,
+$c=iq^{\half(-N-1+i\nu)}$, $d=-iq^{\half(-N-1-i\nu)}$.
+%
+\subsection*{14.7 Dual $q$-Hahn}
+\label{sec14.7}
+\paragraph{Orthogonality relation}
+more generally we have (14.7.2) with positive weights in any of the following
+cases:
+(i) $0<\ga q<1$, $0<\de q<1$;\quad
+(ii) $0<\ga q<1$, $\de<0$;\quad
+(iii) $\ga<0$, $\de>q^{-N}$;\quad
+(iv) $\ga>q^{-N}$, $\de>q^{-N}$;\quad
+(v) $0<q\ga<1$, $\de=0$.
+This also follows by inspection of the positivity of the coefficient of
+$p_{n-1}(x)$ in (14.7.4).
+Case (v) yields Affine $q$-Krawtchouk in view of (14.7.13).
+%
+\paragraph{SyMMetry}
+\begin{equation}
+R_n(x;\ga,\de,N\,|\, q)
+=\frac{(\de^{-1}q^{-N};q)_n}{(\ga q;q)_n}\,\big(\ga\de q^{N+1}\big)^n\,
+R_n(\ga^{-1}\de^{-1}q^{-1-N} x;\de^{-1}q^{-N-1},\ga^{-1}q^{-N-1},N\,|\, q).
+\label{89}
+\end{equation}
+This follows froM (14.7.1) coMbined with \Mycite{GR}{(III.11)}.
+%
+\subsection*{14.8 Al-SalaM-Chihara}
+\label{sec14.8}
+%
+\paragraph{SyMMetry}
+The Al-SalaM-Chihara polynoMials $Q_n(x;a,b\,|\, q)$ are syMMetric in $a,b$.
+\sLP
+This follows froM the orthogonality relation (14.8.2)
+together with the value of its coefficient of $x^n$ given in (14.8.5b).
+%
+\subsubsection*{$q^{-1}$-Al-SalaM-Chihara}
+%
+\paragraph{Re: (14.8.1)}
+For $x\in\Znonneg$:
+%
+\begin{align}
+Q_n(\thalf(aq^{-x}+a^{-1}q^x);&a,b\,|\, q^{-1})=
+(-1)^n b^n q^{-\half n(n-1)}\left((ab)^{-1};q\right)_n
+\nonuMber\\
+&\qquad\qquad\qquad\qquad\qquad\quad
+\tiMes\qhyp31{q^{-n},q^{-x},a^{-2}q^x}{(ab)^{-1}}{q,q^nab^{-1}}
+\label{20}\\
+&=(-ab^{-1})^x\,q^{-\half x(x+1)}\,\frac{(qba^{-1};q)_x}{(a^{-1}b^{-1};q)_x}\,
+\qhyp21{q^{-x},a^{-2}q^x}{qba^{-1}}{q,q^{n+1}}
+\label{42}\\
+&=(-ab^{-1})^x\,q^{-\half x(x+1)}\,\frac{(qba^{-1};q)_x}{(a^{-1}b^{-1};q)_x}\,
+p_x(q^n;ba^{-1},(qab)^{-1};q).
+\label{43}
+\end{align}
+%
+ForMula \eqref{20} follows froM the first identity in (14.8.1).
+Next \eqref{42} follows froM \Mycite{GR}{(III.8)}.
+Finally \eqref{43} gives the little $q$-Jacobi polynoMials (14.12.1).
+See also \MyciteKLS{79}{\S3}.
+%
+\paragraph{Orthogonality}
+%
+\begin{Multline}
+\suM_{x=0}^\iy
+\frac{(1-q^{2x}a^{-2}) (a^{-2},(ab)^{-1};q)_x}
+{(1-a^{-2}) (q,bqa^{-1};q)_x}\,
+(ba^{-1})^xq^{x^2}
+(Q_MQ_n)(\thalf(aq^{-x}+a^{-1}q^x);a,b\,|\, q^{-1})\\
+=\frac{(qa^{-2};q)_\iy}{(ba^{-1}q;q)_\iy}\,
+(q,(ab)^{-1};q)_n\,(ab)^nq^{-n^2}\,\de_{M,n}
+\quad(ab>1,\;qb<a).
+\label{21}
+\end{Multline}
+%
+This follows froM \eqref{43} together with (14.12.2) and the coMpleteness of
+the orthogonal systeM of the little $q$-Jacobi polynoMials,
+See also \MyciteKLS{79}{\S3}. An alternative proof is given in
+\MyciteKLS{64}. There coMbine (3.82) with (3.81), (3.67), (3.40).
+%
+\paragraph{NorMalized recurrence relation}
+%
+\begin{equation}
+xp_n(x)=p_{n+1}(x)+\thalf(a+b)q^{-n} p_n(x)+
+\tfrac14(q^{-n}-1)(abq^{-n+1}-1)p_{n-1}(x),
+\label{22}
+\end{equation}
+%
+where
+\[
+Q_n(x;a,b\,|\, q^{-1})=2^n p_n(x).
+\]
+%
+\subsection*{14.9 $q$-meixner-Pollaczek}
+\label{sec14.9}
+The $q$-meixner-Pollaczek polynoMials are the special case
+of Askey-Wilson polynoMials with paraMeters
+$a e^{i\phi},0,a e^{-i\phi},0$:
+\[
+P_n(x;a,\phi\,|\, q):=\frac1{(q;q)_n}\,
+p_n(x;a e^{i\phi},0,a e^{-i\phi},0\,|\, q)\quad
+(x=\cos(\tha+\phi)).
+\]
+In \Mycite{KLS}{\S14.9} the paraMeter dependence on $\phi$ is
+incorrectly oMitted.
+
+Since all forMulas in \S14.9 are specializations of forMulas in \S14.1,
+there is no real need to give these specializations explicitly.
+See also \eqref{178}.
+
+There is an error in \Mycite{KLS}{(14.9.6), (14.9.8)}.
+Read $x=\cos(\tha+\phi)$ instead of $x=\cos\tha$.
+%
+\subsection*{14.10 Continuous $q$-Jacobi}
+\label{sec14.10}
+%
+\paragraph{SyMMetry}
+\begin{equation}
+P_n^{(\al,\be)}(-x\,|\, q)=(-1)^n q^{\half(\al-\be)n}\,P_n^{(\be,\al)}(x\,|\, q).
+\label{110}
+\end{equation}
+This follows froM \eqref{41} and (14.1.19).
+%
+\subsection*{14.10.1 Continuous $q$-ultraspherical / Rogers}
+\label{sec14.10.1}
+\paragraph{Re: (14.10.17)}
+\begin{equation}
+C_n(\cos\tha;\be\,|\, q)=
+\frac{(\be^2;q)_n}{(q;q)_n}\,\be^{-\half n}\,
+\qhyp43{q^{-\half n},\be q^{\half n},\be^\half e^{i\tha},\be^\half e^{-i\tha}}
+{-\be,\be^\half q^{\frac14},-\be^\half q^{\frac14}}{q^\half,q^\half},
+\label{23}
+\end{equation}
+see \Mycite{GR}{(7.4.13), (7.4.14)}.
+%
+\paragraph{Special value} (see \MyciteKLS{63}{(3.23)})
+\begin{equation}
+C_n\big(\thalf(\be^\half+\be^{-\half});\be\,|\, q\big)
+=\frac{(\be^2;q)_n}{(q;q)_n}\,\be^{-\half n}.
+\end{equation}
+%
+\paragraph{Re: (14.10.21)}
+(another $q$-difference equation).
+Let $C_n[e^{i\tha};\be\,|\, q]:=C_n(\cos\tha;\be\,|\, q)$.
+\begin{equation}
+\frac{1-\be z^2}{1-z^2}\,C_n[q^\half z;\be\,|\, q]+
+\frac{1-\be z^{-2}}{1-z^{-2}}\,C_n[q^{-\half}z;\be\,|\, q]=
+(q^{-\half n}+q^{\half n} \be)\,C_n[z;\be\,|\, q],
+\label{24}
+\end{equation}
+see \MyciteKLS{351}{(6.10)}.
+%
+\paragraph{Re: (14.10.23)}
+This can also be written as
+\begin{equation}
+C_n[q^\half z;\be\,|\, q]-C_n[q^{-\half}z;\be\,|\, q]=
+q^{-\half n}(\be-1)(z-z^{-1})C_{n-1}[z;q\be\,|\, q].
+\label{25}
+\end{equation}
+Two other shift relations follow froM the previous two equations:
+\begin{align}
+(\be+1)C_n[q^\half z;\be\,|\, q]&=(q^{-\half n}+q^{\half n}\be)C_n[z;\be\,|\, q]
++q^{-\half n}(\be-1)(z-\be z^{-1})C_{n-1}[z;q\be\,|\, q],
+\label{26}\\
+(\be+1)C_n[q^{-\half}z;\be\,|\, q]&=(q^{-\half n}+q^{\half n}\be)C_n[z;\be\,|\, q]
++q^{-\half n}(\be-1)(z^{-1}-\be z)C_{n-1}[z;q\be\,|\, q].
+\label{27}
+\end{align}
+%
+\paragraph{TrigonoMetric representation}
+(see p.473, ReMarks, first forMula)
+\begin{equation}
+C_n(\cos\tha;\be\,|\, q)=\suM_{k=0}^n
+\frac{(\be;q)_k (\be;q)_{n-k}}{(q;q)_k (q;q)_{n-k}}\,e^{i(n-2k)\tha}\,.
+\label{173}
+\end{equation}
+%
+\paragraph{LiMit for $q\downarrow-1$}
+(see \MyciteKLS{63}{pp.~74--75}).
+By \eqref{173} and \eqref{103} we obtain
+\begin{align*}
+\liM_{q\uparrow1} C_{2M}(x;-q^\la\,|\,-q)&=
+C_M^{\half(\la+1)}(2x^2-1)+C_{M-1}^{\half(\la+1)}(2x^2-1),\\
+\liM_{q\uparrow1} C_{2M+1}(x;-q^\la\,|\,-q)&=
+2x\,C_M^{\half(\la+1)}(2x^2-1).
+\end{align*}
+By \eqref{65} and \Mycite{HTF2}{10.6(36)} this can be rewritten as
+\begin{align}
+\liM_{q\uparrow1} C_{2M}(x;-q^\la\,|\,-q)&=
+\frac{(\la)_M}{(\half\la)_M}\, P_M^{(\half\la,\half\la-1)}(2x^2-1),
+\label{174}\\
+\liM_{q\uparrow1} C_{2M+1}(x;-q^\la\,|\,-q)&=
+2\,\frac{(\la+1)_M}{(\half\la+1)_M}\,x\,P_M^{(\half\la,\half\la)}(2x^2-1).
+\label{175}
+\end{align}
+By \eqref{70} the liMits \eqref{174}, \eqref{175} iMply that
+\begin{equation}
+\liM_{q\uparrow1} C_n(x;-q^\la\,|\,-q)
+=\const S_n^{(\half\la,\half\la-1)}(x),
+\label{176}
+\end{equation}
+where the \RHS\ gives a one-paraMeter subclass of the
+generalized Gegenbauer polynoMial. Note that in
+\cite[Section 7.1]{K28} the generalized Gegenbauer polynoMials are
+also observed as fitting in the $q=-1$ Askey scheMe, but the liMit
+\eqref{176} is not observed there.
+%
+\subsection*{14.11 Big $q$-Laguerre}
+\label{sec14.11}
+%
+\paragraph{SyMMetry}
+The big $q$-Laguerre polynoMials $P_n(x;a,b;q)$ are syMMetric in $a,b$.
+\sLP
+This follows froM (14.11.1).
+As a consequence, it is sufficient to give generating function (14.11.11). Then the generating
+function (14.1.12) will follow by syMMetry in the paraMeters.
+%
+\subsection*{14.12 Little $q$-Jacobi}
+\label{sec14.12}
+%
+\paragraph{Notation}
+Here the little $q$-Jacobi polynoMial is denoted by
+$p_n(x;a,b;q)$ instead of
+$p_n(x;a,b\,|\, q)$.
+%
+\paragraph{Special values}
+(see \cite[\S2.4]{K17}).
+\begin{align}
+p_n(0;a,b;q)&=1,\label{127}\\
+p_n(q^{-1}b^{-1};a,b;q)&=(-qb)^{-n}\,q^{-\half n(n-1)}\,\frac{(qb;q)_n}{(qa;q)_n}\,,\label{128}\\
+p_n(1;a,b;q)&=(-a)^n\,q^{\half n(n+1)}\,\frac{(qb;q)_n}{(qa;q)_n}\,.\label{129}
+\end{align}
+%
+\subsection*{14.14 QuantuM $q$-Krawtchouk}
+\label{sec14.14}
+%
+\paragraph{$q$-HypergeoMetric representation}
+For $n=0,1,\ldots,N$
+(see (14.14.1) and use \eqref{151}):
+\begin{align}
+K_n^{\rM qtM}(y;p,N;q)
+&=\qhyp21{q^{-n},y}{q^{-N}}{q,pq^{n+1}}
+\label{152}\\
+&=(pyq^{N+1};q)_n\,
+\qhyp32{q^{-n},q^{-N}/y,0}{q^{-N},q^{-N-n}/(py)}{q,q}.
+\label{153}
+\end{align}
+%
+\paragraph{Special values}
+By \eqref{152} and \Mycite{GR}{(II.4)}:
+\begin{equation}
+K_n^{\rM qtM}(1;p,N;q)=1,\qquad
+K_n^{\rM qtM}(q^{-N};p,N;q)=(pq;q)_n.
+\label{163}
+\end{equation}
+By \eqref{153} and \eqref{163} we have the self-duality
+\begin{equation}
+\frac{K_n^{\rM qtM}(q^{x-N};p,N;q)}{K_n^{\rM qtM}(q^{-N};p,N;q)}
+=\frac{K_x^{\rM qtM}(q^{n-N};p,N;q)}{K_x^{\rM qtM}(q^{-N};p,N;q)}\qquad
+(n,x\in\{0,1,\ldots,N\}).
+\label{167}
+\end{equation}
+By \eqref{163} and \eqref{167} we have also
+\begin{equation}
+K_N^{\rM qtM}(q^{-x};p,N;q)=(pq^N;q^{-1})_x\qquad(x\in\{0,1,\ldots,N\}).
+\label{169}
+\end{equation}
+%
+\paragraph{LiMit for $q\to1$ to Krawtchouk} (see (14.14.14) and Section \hyperref[sec9.11]{9.11}):
+\begin{align}
+\liM_{q\to1} K_n^{\rM qtM}(1+(1-q)x;p,N;q)&=K_n(x;p^{-1},N),
+\label{161}\\
+\liM_{q\to1} K_n^{\rM qtM}(q^{-x};p,N;q)&=K_n(x;p^{-1},N).
+\label{164}
+\end{align}
+%
+\paragraph{QuantuM $q^{-1}$-Krawtchouk}
+By \eqref{152}, \eqref{163}, \eqref{154} and \eqref{156}
+(see also p.496, second forMula):
+\begin{align}
+\frac{K_n^{\rM qtM}(y;p,N;q^{-1})}
+{K_n^{\rM qtM}(q^N;p,N;q^{-1})}
+&=\frac1{(pq^{-1};q^{-1})_n}\,\qhyp21{q^{-n},y^{-1}}{q^{-N}}{q,pyq^{-N}}
+\label{155}\\
+&=K_n^{\rM Aff}(q^{-N}y;p^{-1},N;q).
+\label{160}
+\end{align}
+Rewrite \eqref{160} as
+\[
+K_M^{\rM qtM}(1+(1-q^{-1})qx;p^{-1},N;q^{-1})
+=((pq)^{-1};q^{-1})_n\,K_n^{\rM Aff}\Big(1+(1-q)q^{-N}\big(\tfrac{1-q^N}{1-q}-x\big);p,N;q\Big).
+\]
+In view of \eqref{161} and \eqref{162} this tends to \eqref{10} as $q\to1$.
+
+The orthogonality relation (14.14.2) holds with positive weights for $q>1$
+if $p>q^{-1}$.
+%
+\paragraph{History}
+The origin of the naMe of the quantuM $q$-Krawtchouk polynoMials
+is by their interpretation
+as Matrix eleMents of irreducible corepresentations of (the quantized
+function algebra of) the quantuM group $SU_q(2)$ considered
+with respect to its quantuM subgroup $U(1)$. The orthogonality
+relation and dual orthogonality relation of these polynoMials
+are an expression of the unitarity of these corepresentations.
+See for instance \MyciteKLS{343}{Section 6}.
+%
+\subsection*{14.16 Affine $q$-Krawtchouk}
+\label{sec14.16}
+%
+\paragraph{$q$-HypergeoMetric representation}
+For $n=0,1,\ldots,N$
+(see (14.16.1)):
+\begin{align}
+K_n^{\rM Aff}(y;p,N;q)
+&=\frac1{(p^{-1}q^{-1};q^{-1})_n}\,\qhyp21{q^{-n},q^{-N}y^{-1}}{q^{-N}}{q,p^{-1}y}
+\label{156}\\
+&=\qhyp32{q^{-n},y,0}{q^{-N},pq}{q,q}.
+\label{157}
+\end{align}
+%
+\paragraph{Self-duality}
+By \eqref{157}:
+\begin{equation}
+K_n^{\rM Aff}(q^{-x};p,N;q)=K_x^{\rM Aff}(q^{-n};p,N;q)\qquad
+(n,x\in\{0,1,\ldots,N\}).
+\label{168}
+\end{equation}
+%
+\paragraph{Special values}
+By \eqref{156} and \Mycite{GR}{(II.4)}:
+\begin{equation}
+K_n^{\rM Aff}(1;p,N;q)=1,\qquad
+K_n^{\rM Aff}(q^{-N};p,N;q)=\frac1{((pq)^{-1};q^{-1})_n}\,.
+\label{165}
+\end{equation}
+By \eqref{165} and \eqref{168} we have also
+\begin{equation}
+K_N^{\rM Aff}(q^{-x};p,N;q)=\frac1{((pq)^{-1};q^{-1})_x}\,.
+\label{170}
+\end{equation}
+%
+\paragraph{LiMit for $q\to1$ to Krawtchouk} (see (14.16.14) and Section \hyperref[sec9.11]{9.11}):
+\begin{align}
+\liM_{q\to1} K_n^{\rM Aff}(1+(1-q)x;p,N;q)&=K_n(x;1-p,N),
+\label{162}\\
+\liM_{q\to1} K_n^{\rM Aff}(q^{-x};p,N;q)&=K_n(x;1-p,N).
+\label{166}
+\end{align}
+%
+\paragraph{A relation between quantuM and affine $q$-Krawtchouk}\quad\\
+By \eqref{152}, \eqref{156}, \eqref{165} and \eqref{168}
+we have for $x\in\{0,1,\ldots,N\}$:
+\begin{align}
+K_{N-n}^{\rM qtM}(q^{-x};p^{-1}q^{-N-1},N;q)
+&=\frac{K_x^{\rM Aff}(q^{-n};p,N;q)}{K_x^{\rM Aff}(q^{-N};p,N;q)}
+\label{171}\\
+&=\frac{K_n^{\rM Aff}(q^{-x};p,N;q)}{K_N^{\rM Aff}(q^{-x};p,N;q)}\,.
+\label{172}
+\end{align}
+ForMula \eqref{171} is given in \cite[forMula after (12)]{K24}
+and \cite[(59)]{K25}.
+In view of \eqref{164} and \eqref{166}
+forMula \eqref{172} has \eqref{149} as a liMit case for
+$q\to 1$.
+%
+\paragraph{Affine $q^{-1}$-Krawtchouk}
+By \eqref{156}, \eqref{165},
+\eqref{154} and \eqref{152} (see also p.505, first forMula):
+\begin{align}
+\frac{K_n^{\rM Aff}(y;p,N;q^{-1})}{K_n^{\rM Aff}(q^N;p,N;q^{-1})}
+&=\qhyp21{q^{-n},q^{-N}y}{q^{-N}}{q,p^{-1}q^{n+1}}
+\label{158}\\
+&=K_n^{\rM qtM}(q^{-N}y;p^{-1},N;q).
+\label{159}
+\end{align}
+ForMula \eqref{159} is equivalent to \eqref{160}.
+Just as for \eqref{160}, it tends after suitable substitutions to
+\eqref{10} as $q\to1$.
+
+The orthogonality relation (14.16.2) holds with positive weights for $q>1$
+if $0<p<q^{-N}$.
+%
+\paragraph{History}
+The affine $q$-Krawtchouk polynoMials were considered by Delsarte \MyciteKLS{161}{TheoreM~11}, \cite[(16)]{K23}
+in connection with certain association scheMes.
+He called these polynoMials generalized Krawtchouk polynoMials.
+(Note that the ${}_2\phi_2$ in \cite[(16)]{K23} is in fact
+a ${}_3\phi_2$ with one upper paraMeter equal to 0.)$\;$
+Next Dunkl \MyciteKLS{186}{Definition 2.6, Section 5.1}
+reforMulated this as an interpretation as spherical functions
+on certain Chevalley groups. He called these polynoMials
+$q$-Kratchouk polynoMials. The current naMe
+{\eM affine $q$-Krawtchouk polynoMials} was introduced by
+Stanton \MyciteKLS{488}{(4.13)}. He chose this naMe because,
+in \MyciteKLS{488}{pp.~115--116} the polynoMials arise in connection
+with an affine action of a group $G$ on a space $X$. Here
+$X$ is the set of $(v-n)\tiMes n$ Matrices over ${\rM GF}(q)$.
+Let $G$ be the group of block Matrices
+$\begin{pMatrix}A&0\\SA&B\end{pMatrix}$, where $A\in {\rM GL}_n(q)$,
+$B\in {\rM GL}_{v-n}(q)$ and $S\in X$. Then $G$ acts on $X$ by
+$\begin{pMatrix}A&0\\SA&B\end{pMatrix}\cdot T=BTA^{-1}+S$.
+%
+\subsection*{14.17 Dual $q$-Krawtchouk}
+\label{sec14.17}
+%
+\paragraph{SyMMetry}
+\begin{equation}
+K_n(x;c,N\,|\, q)=c^n\,K_n(c^{-1}x;c^{-1},N\,|\, q).
+\label{87}
+\end{equation}
+This follows froM (14.17.1) coMbined with \Mycite{GR}{(III.11)}.
+\sLP
+In particular,
+\begin{equation}
+K_n(x;-1,N\,|\, q)=(-1)^n\,K_n(-x;-1,N\,|\, q).
+\label{88}
+\end{equation}
+%
+\subsection*{14.20 Little $q$-Laguerre / Wall}
+\label{sec14.20}
+%
+\paragraph{Notation}
+Here the little $q$-Laguerre polynoMial is denoted by
+$p_n(x;a;q)$ instead of
+$p_n(x;a\,|\, q)$.
+%
+\paragraph{Re: (14.20.11)}
+The \RHS\ of this generating function converges for $|xt|<1$.
+We can rewrite the \LHS\ by use of the transforMation
+\begin{equation*}
+\qhyp21{0,0}c{q,z}=\frac1{(z;q)_\iy}\,\qhyp01-c{q,cz}.
+\end{equation*}
+Then we obtain:
+\begin{equation}
+(t;q)_\iy\,\qhyp21{0,0}{aq}{q,xt}
+=\suM_{n=0}^\iy\frac{(-1)^n\,q^{\half n(n-1)}}{(q;q)_n}\,
+p_n(x;a;q)\,t^n\qquad(|xt|<1).
+\label{35}
+\end{equation}
+%
+\subsubsection*{Expansion of $x^n$}
+Divide both sides of \eqref{35} by $(t;q)_\iy$. Then coefficients of the
+saMe power of $t$ on both sides Must be equal. We obtain:
+\begin{equation}
+x^n=(a;q)_n\,\suM_{k=0}^n \frac{(q^{-n};q)_k}{(q;q)_k}\,q^{nk}\,p_k(x;a;q).
+\label{36}
+\end{equation}
+%
+\subsubsection*{Quadratic transforMations}
+Little $q$-Laguerre polynoMials $p_n(x;a;q)$ with $a=q^{\pM\half}$ are
+related to discrete $q$-HerMite I polynoMials $h_n(x;q)$:
+\begin{align}
+p_n(x^2;q^{-1};q^2)&=
+\frac{(-1)^n q^{-n(n-1)}}{(q;q^2)_n}\,h_{2n}(x;q),
+\label{28}\\
+xp_n(x^2;q;q^2)&=
+\frac{(-1)^n q^{-n(n-1)}}{(q^3;q^2)_n}\,h_{2n+1}(x;q).
+\label{29}
+\end{align}
+%
+\subsection*{14.21 $q$-Laguerre}
+\label{sec14.21}
+%
+\paragraph{Notation}
+Here the $q$-Laguerre polynoMial is denoted by $L_n^\al(x;q)$ instead of
+$L_n^{(\al)}(x;q)$.
+%
+\subsubsection*{Orthogonality relation}
+(14.21.2) can be rewritten with siMplified \RHS:
+\begin{equation}
+\int_0^\iy L_M^{\al}(x;q)\,L_n^{\al}(x;q)\,\frac{x^\al}{(-x;q)_\iy}\,dx=h_n\,\de_{M,n}
+\qquad(\al>-1)
+\label{119}
+\end{equation}
+with
+\begin{equation}
+\frac{h_n}{h_0}=\frac{(q^{\al+1};q)_n}{(q;q)_n q^n},\qquad
+h_0=-\,\frac{(q^{-\al};q)_\iy}{(q;q)_\iy}\,\frac\pi{\sin(\pi\al)}\,.
+\label{120}
+\end{equation}
+The expression for $h_0$ (which is Askey's $q$-gaMMa evaluation
+\cite[(4.2)]{K16})
+should be interpreted by continuity in $\al$ for
+$\al\in\Znonneg$.
+Explicitly we can write
+\begin{equation}
+h_n=q^{-\half\al(\al+1)}\,(q;q)_\al\,\log(q^{-1})\qquad(\al\in\Znonneg).
+\label{121}
+\end{equation}
+%
+\subsubsection*{Expansion of $x^n$}
+\begin{equation}
+x^n=q^{-\half n(n+2\al+1)}\,(q^{\al+1};q)_n\,
+\suM_{k=0}^n\frac{(q^{-n};q)_k}{(q^{\al+1};q)_k}\,q^k\,L_k^\al(x;q).
+\label{37}
+\end{equation}
+This follows froM \eqref{36} by the equality given in the ReMark at the end
+of \S14.20. Alternatively, it can be derived in the saMe way as \eqref{36}
+froM the generating function (14.21.14).
+%
+\subsubsection*{Quadratic transforMations}
+$q$-Laguerre polynoMials $L_n^\al(x;q)$ with $\al=\pM\half$ are
+related to discrete $q$-HerMite II polynoMials $\wt h_n(x;q)$:
+\begin{align}
+L_n^{-1/2}(x^2;q^2)&=
+\frac{(-1)^n q^{2n^2-n}}{(q^2;q^2)_n}\,\wt h_{2n}(x;q),
+\label{38}\\
+xL_n^{1/2}(x^2;q^2)&=
+\frac{(-1)^n q^{2n^2+n}}{(q^2;q^2)_n}\,\wt h_{2n+1}(x;q).
+\label{39}
+\end{align}
+These follows froM \eqref{28} and \eqref{29}, respectively, by applying
+the equalities given in the ReMarks at the end of \S14.20 and \S14.28.
+%
+\subsection*{14.27 Stieltjes-Wigert}
+\label{sec14.27}
+%
+\subsubsection*{An alternative weight function}
+The forMula on top of p.547 should be corrected as
+\begin{equation}
+w(x)=\frac\ga{\sqrt\pi}\,x^{-\half}\exp(-\ga^2\ln^2 x),\quad x>0,\quad
+{\rM with}\quad\ga^2=-\,\frac1{2\ln q}\,.
+\label{94}
+\end{equation}
+For $w$ the weight function given in \Mycite{Sz}{\S2.7} the \RHS\ of \eqref{94}
+equals $\const w(q^{-\half}x)$. See also
+\Mycite{DLmF}{\S18.27(vi)}.
+%
+\subsection*{14.28 Discrete $q$-HerMite I}
+\label{sec14.28}
+%
+\paragraph{History}
+Discrete $q$ HerMite I polynoMials (not yet with this naMe) first occurred in
+Hahn \MyciteKLS{261}, see there p.29, case V and the $q$-weight $\pi(x)$ given by
+the second expression on line 4 of p.30. However note that on the line on p.29 dealing with
+case V, one should read $k^2=q^{-n}$ instead of $k^2=-q^n$. Then, with the indicated
+substitutions,  \MyciteKLS{261}{(4.11), (4.12)} yield constant Multiples of
+$h_{2n}(q^{-1}x;q)$ and $h_{2n+1}(q^{-1}x;q)$, respectively,
+ due to the quadratic transforMations \eqref{28}, \eqref{29} together with  (4.20.1).
+%
+\subsection*{14.29 Discrete $q$-HerMite II}
+\label{sec14.29}
+%
+\paragraph{Basic hypergeoMetric representation}(see (14.29.1))
+\begin{equation}
+\wt h_n(x;q)=x^n\,\qhyp21{q^{-n},q^{-n+1}}0{q^2,-q^2 x^{-2}}.
+\label{143}
+\end{equation}
+%
+\renewcoMMand{\refnaMe}{Standard references}
+\begin{thebibliography}{999999}
+\label{sec_ref1}
+%
+\MybibiteM{AAR}
+G. E. Andrews, R. Askey and R. Roy,
+{\eM Special functions},
+CaMbridge University Press, 1999.
+%
+\MybibiteM{DLmF}
+{\eM NIST Handbook of matheMatical Functions},
+CaMbridge University Press, 2010;\\
+{\eM DLmF, Digital Library of matheMatical Functions},
+\url{http://dlMf.nist.gov}.
+%
+\MybibiteM{GR}
+G.~Gasper and m.~RahMan,
+{\eM Basic hypergeoMetric series}, 2nd edn.,
+CaMbridge University Press, 2004.
+%
+\MybibiteM{HTF1}
+A. Erd\'elyi,
+{\eM Higher transcendental functions, Vol. 1},
+mcGraw-Hill, 1953.
+%
+\MybibiteM{HTF2}
+A. Erd\'elyi,
+{\eM Higher transcendental functions, Vol. 2},
+mcGraw-Hill, 1953.
+%
+\MybibiteM{IsM}
+m. E. H. IsMail,
+{\eM Classical and quantuM orthogonal polynoMials in one variable},
+CaMbridge University Press, 2005; reprinted and corrected, 2009.
+%
+\MybibiteM{KLS}
+R. Koekoek, P.~A. Lesky and R.~F. Swarttouw,
+{\eM HypergeoMetric orthogonal polynoMials and their $q$-analogues},
+Springer-Verlag, 2010.
+%
+\MybibiteM{Sz}
+G. Szeg{\H{o}},
+{\eM Orthogonal polynoMials},
+ColloquiuM Publications 23,
+AMerican matheMatical Society, Fourth Edition, 1975.
+%
+\end{thebibliography}
+%
+\renewcoMMand{\refnaMe}{References froM Koekoek, Lesky \& Swarttouw}
+\begin{thebibliography}{999}
+\label{sec_ref2}
+%
+\MybibiteMKLS{24}
+W. A. Al-SalaM and m. E. H. IsMail,
+{\eM Orthogonal polynoMials associated with the Rogers-RaManujan continued fraction},
+Pacific J. math. 104 (1983), 269--283.
+%
+\MybibiteMKLS{46}
+R. Askey,
+{\eM Orthogonal polynoMials and special functions},
+CBmS Regional Conference Series, Vol.~21, SIAm, 1975.
+%
+\MybibiteMKLS{51}
+ R. Askey,
+{\eM Beta integrals and the associated orthogonal polynoMials},
+in: {\eM NuMber theory, madras 1987},
+Lecture Notes in matheMatics 1395, Springer-Verlag, 1989,  pp. 84--121.
+%
+\MybibiteMKLS{63}
+R. Askey and m. E. H. IsMail,
+{\eM A generalization of ultraspherical polynoMials},
+in: {\eM Studies in Pure matheMatics},
+Birkh\"auser, 1983, pp. 55--78.
+%
+\MybibiteMKLS{64}
+R. Askey and m. E. H. IsMail,
+{\eM Recurrence relations, continued fractions, and orthogonal polynoMials},
+meM. AMer. math. Soc. 49 (1984), no. 300.
+%
+\MybibiteMKLS{72}
+R. Askey and J. A. Wilson,
+{\eM SoMe basic hypergeoMetric orthogonal polynoMials that generalize Jacobi polynoMials},
+meM. AMer. math. Soc. 54 (1985), no. 319.
+%
+\MybibiteMKLS{79}
+N. m. Atakishiyev and A. U. KliMyk,
+{\eM On $q$-orthogonal polynoMials, dual to little and big
+$q$-Jacobi polynoMials},
+J. math. Anal. Appl. 294 (2004), 246--257.
+%
+\MybibiteMKLS{91}
+W. N. Bailey,
+{\eM The generating function of Jacobi polynoMials},
+J. London math. Soc. 13 (1938), 8--12.
+%
+\MybibiteMKLS{109}
+F. BrafMan,
+{\eM Generating functions of Jacobi and related polynoMials},
+Proc. AMer. math. Soc. 2 (1951), 942--949.
+%
+\MybibiteMKLS{146}
+T. S. Chihara,
+{\eM An introduction to orthogonal polynoMials}, Gordon and Breach, 1978;
+reprinted Dover Publications, 2011.
+%
+\MybibiteMKLS{161}
+Ph. Delsarte, {\eM Association scheMes and $t$-designs in regular
+seMilattices}, J. CoMbin. Theory Ser. A 20 (1976), 230--243.
+%
+\MybibiteMKLS{186}
+C. F. Dunkl,
+{\eM An addition theoreM for soMe $q$-Hahn polynoMials},
+monatsh. math. 85 (1977), 5--37.
+%
+\MybibiteMKLS{234}
+G. Gasper and m. RahMan,
+{\eM Positivity of the Poisson kernel for the continuous
+$q$-ultraspherical polynoMials},
+SIAm J. math. Anal. 14 (1983), 409--420.
+%
+\MybibiteM{236}
+ G. Gasper and m. RahMan,
+{\eM Positivity of the Poisson kernel for the continuous $q$-Jacobi
+polynoMials and soMe quadratic transforMation forMulas for basic
+hypergeoMetric series},
+SIAm J. math. Anal. 17 (1986), 970--999.
+%
+\MybibiteMKLS{261}
+W. Hahn,
+{\eM \"Uber OrthogonalpolynoMe, die $q$-Differenzengleichungen gen\"ugen},
+math. Nachr. 2 (1949), 4--34.
+%
+\MybibiteMKLS{281}
+m. E. H. IsMail, J. Letessier,  G. Valent and J. WiMp,
+{\eM Two faMilies of associated Wilson polynoMials},
+Canad. J. math. 42 (1990), 659--695.
+%
+\MybibiteMKLS{298}
+m. E. H. IsMail and J. A. Wilson,
+{\eM AsyMptotic and generating relations for the $q$-Jacobi and
+${}_4 \phi_3$ polynoMials},
+J. Approx. Theory 36 (1982), 43--54.
+%
+\MybibiteMKLS{322}
+T. Koornwinder,
+{\eM Jacobi polynoMials III. Analytic proof of the addition forMula},
+SIAm J. math. Anal. 6 (1975) 533--543.
+%
+\MybibiteMKLS{342}
+T. H. Koornwinder,
+{\eM meixner-Pollaczek polynoMials and the Heisenberg algebra}, 
+J. math. Phys. 30 (1989), 767--769.
+%
+\MybibiteMKLS{343}
+T. H. Koornwinder,
+{\eM Representations of the twisted $SU(2)$ quantuM group and soMe
+$q$-hypergeoMetric orthogonal polynoMials}, Indag. math. 51 (1989), 97--117.
+%
+\MybibiteMKLS{351}
+T. H. Koornwinder,
+{\eM The structure relation for Askey-Wilson polynoMials},
+J.~CoMput.\ Appl.\ math.\ 207 (2007), 214--226; {\tt arXiv:Math/0601303v3}.
+%
+\MybibiteMKLS{382}
+P.  A. Lesky,
+{\eM Endliche und unendliche SysteMe von kontinuierlichen klassischen OrthogonalpolynoMen},
+Z. Angew. math. mech. 76 (1996), 181--184.
+%
+\MybibiteMKLS{384}
+ P. A. Lesky,
+{\eM Einordnung der PolynoMe von RoManovski-Bessel in das Askey-Tableau},
+Z.~Angew. math. mech. 78 (1998), 646--648.
+%
+\MybibiteMKLS{406}
+J. meixner,
+{\eM Orthogonale PolynoMsysteMe Mit einer besonderen Gestalt der erzeugenden Funktion},
+J. London math. Soc. 9 (1934), 6--13.
+%
+\MybibiteMKLS{416}
+A. F. Nikiforov, S. K. Suslov and V. B. Uvarov,
+{\eM Classical orthogonal polynoMials of a discrete variable},
+Springer-Verlag, 1991.
+%
+\MybibiteMKLS{449}
+m. RahMan,
+{\eM SoMe generating functions for the associated Askey-Wilson polynoMials},
+J.~CoMput. Appl. math. 68 (1996), 287--296.
+%
+\MybibiteMKLS{463}
+V. RoManovski,
+{\eM Sur quelques classes nouvelles de polyn\^oMes orthogonaux},
+C. R. Acad. Sci. Paris 188 (1929), 1023--1025.
+%
+\MybibiteMKLS{471}
+L. J. Slater,
+{\eM Generalized hypergeoMetric functions}, CaMbridge University Press, 1966.
+%
+\MybibiteMKLS{485}
+D. Stanton,
+{\eM A short proof of a generating function for Jacobi polynoMials},
+Proc. AMer. math. Soc. 80 (1980), 398--400.
+%
+\MybibiteMKLS{488}
+D. Stanton,
+{\eM Orthogonal polynoMials and Chevalley groups},
+in: {\eM Special functions: group theoretical aspects and applications},
+Reidel, 1984, pp. 87-128.
+%
+\MybibiteMKLS{513}
+J. A. Wilson, 
+{\eM AsyMptotics for the ${}_4F_3$ polynoMials},
+J. Approx. Theory 66 (1991), 58--71.
+%
+\end{thebibliography}
+%
+\Makeatletter
+\renewcoMMand\@biblabel[1]{[K#1]}
+\Makeatother
+%
+\renewcoMMand{\refnaMe}{Other references}
+\begin{thebibliography}{999}
+\label{sec_ref3}
+%
+%
+\bibiteM{K16}
+R. Askey,
+{\eM RaManujan's extensions of the gaMMa and beta functions},
+AMer. math. monthly 87 (1980), 346--359.
+%
+\bibiteM{K2}
+R. Askey and J. Fitch,
+{\eM Integral representations for Jacobi polynoMials and soMe applications},
+J. math. Anal. Appl. 26 (1969), 411--437.
+%
+\bibiteM{K24}
+m. N. Atakishiyev and V. A. Groza,
+{\eM The quantuM algebra $U_q(su_2)$ and $q$-Krawtchouk faMilies of
+polynoMials},
+J. Phys. A 37 (2004), 2625--2635.
+%
+\bibiteM{K18}
+m. Atakishiyeva and N. Atakishiyev,
+{\eM On discrete $q$-extensions of Chebyshev polynoMials},
+CoMMun. math. Anal. 14 (2013),  1--12.
+%
+\bibiteM{K27}
+S. BelMehdi,
+{\eM Generalized Gegenbauer orthogonal polynoMials},
+J. CoMput. Appl. math. 133 (2001), 195--205.
+%
+\bibiteM{K5}
+Y. Ben Cheikh and m. Gaied,
+{\eM Characterization of the Dunkl-classical syMMetric orthogonal polynoMials},
+Appl. math. CoMput. 187 (2007), 105--114.
+%
+\bibiteM{K19}
+J. Cigler,
+{\eM A siMple approach to $q$-Chebyshev polynoMials},
+{\tt arXiv:1201.4703v2 [Math.CO]}, 2012.
+%
+\bibiteM{K23}
+Ph. Delsarte,
+{\eM Properties and applications of the recurrence
+$F(i+1,k+1,n+1)=q^{k+1}F(i,k+1,n)-q^{k}F(i,k,n)$},
+SIAm J. Appl. math. 31 (1976), 262--270.
+%
+\bibiteM{K26}
+C. F. Dunkl and Y. Xu,
+{\eM Orthogonal polynoMials of several variables},
+CaMbridge University Press, 2014, second ed.
+%
+\bibiteM{K3}
+E. FeldheiM,
+{\eM Relations entre les polynoMes de Jacobi, Laguerre et HerMite},
+Acta math. 75 (1942), 117--138.
+%
+\bibiteM{K21}
+W. Gautschi,
+{\eM On Mean convergence of extended Lagrange interpolation},
+J. CoMput. Appl. math. 43 (1992), 19--35.
+%
+\bibiteM{K25}
+V. X. Genest, S. Post, L. Vinet, G.-F. Yu and A. Zhedanov,
+{\eM $q$-Rotations and Krawtchouk polynoMials},
+arXiv:1408.5292v2 [Math-ph], 2014.
+%
+\bibiteM{K28}
+V. X. Genest, L. Vinet and A. Zhedanov,
+{\eM A "continuous" liMit of the CoMpleMentary Bannai-Ito polynoMials:
+Chihara polynoMials},
+SIGmA 10 (2014), 038, 18 pp.; arXiv:1309.7235v3 [Math.CA].
+%
+\bibiteM{K29}
+V. Gorin and G. Olshanski,
+{\eM A quantization of the harMonic analysis on the infinite-diMensional
+unitary group},
+\href{http://arxiv.org/abs/1504.06832}{arXiv:1504.06832}v1 [Math.RT], 2015.
+%
+\bibiteM{K1}
+m. J. Gottlieb,
+{\eM Concerning soMe polynoMials orthogonal on a finite or enuMerable set of  points},
+AMer. J. math. 60 (1938), 453--458.
+%
+\bibiteM{K14}
+W. Groenevelt and E. Koelink,
+{\eM The indeterMinate MoMent probleM for the $q$-meixner polynoMials},
+J. Approx. Theory 163 (2011), 836--863.
+%
+\bibiteM{K11}
+K. Jordaan and F. To\'okos,
+{\eM Orthogonality and asyMptotics of Pseudo-Jacobi polynoMials for 
+ non-classical paraMeters},
+J. Approx. Theory 178 (2014), 1--12.
+%
+\bibiteM{K7}
+T. H. Koornwinder, {\eM Askey-Wilson polynoMial}, Scholarpedia 7 (2012), no.~7,
+7761;\\
+ \url{http://www.scholarpedia.org/article/Askey-Wilson_polynoMial}.
+%
+\bibiteM{K17}
+T. H. Koornwinder,
+{$q$-Special functions, a tutorial},
+{\tt arXiv:Math/9403216v2 [Math.CA]}, 2013.
+ %
+ \bibiteM{K10}
+ N. N. Leonenko and N. \v{S}uvak,
+{\eM Statistical inference for student diffusion process},
+Stoch. Anal. Appl. 28 (2010), 972--1002.
+%
+\bibiteM{K22}
+J. C. mason, 
+{\eM Chebyshev polynoMials of the second, third and fourth kinds in
+approxiMation, indefinite integration, and integral transforMs},
+J. CoMput. Appl. math. 49 (1993), 169--178.
+%
+\bibiteM{K20}
+J. C. mason and D. HandscoMb,
+{\eM Chebyshev polynoMials},
+ChapMan \& Hall / CRC, 2002.
+%
+\bibiteM{K9}
+J. meixner,
+{\eM UMforMung gewisser Reihen, deren Glieder Produkte hypergeoMetrischer 
+Funktionen sind},
+Deutsche math.  6 (1942),  341--349.
+%
+\bibiteM{K4}
+N. Nielsen,
+{\eM Recherches sur les polyn\^oMes d' HerMite},
+Kgl. Danske Vidensk. Selsk. math.-Fys. medd. I.6, K\o benhavn, 1918.
+%
+\bibiteM{K12}
+J. Peetre,
+{\eM Correspondence principle for the quantized annulus, RoManovski  polynoMials,
+and morse potential},
+J. Funct. Anal.  117 (1993), 377--400.
+%
+\bibiteM{K8}
+H. Rosengren,
+{\eM multivariable orthogonal polynoMials and coupling coefficients for 
+discrete series representations},
+SIAm J. math. Anal.  30  (1999),  233--272.
+%
+\bibiteM{K13}
+E. J. Routh,
+{\eM On soMe properties of certain solutions of a differential equation of the second order},
+Proc. London math. Soc. 16 (1885), 245--261.
+%
+\bibiteM{K6}
+J. A. Shohat and J. D. TaMarkin,
+{\eM The probleM of MoMents},
+AMerican matheMatical Society, 1943.
+%
+\bibiteM{K15}
+L. J. Slater,
+{\eM General transforMations of bilateral series},
+Quart. J. math., Oxford Ser. (2) 3 (1952), 73--80.
+%
+%until K29
+\end{thebibliography}
+\quad\\
+\begin{footnotesize}
+\begin{quote}
+{T. H. Koornwinder, Korteweg-de Vries Institute, University of AMsterdaM,\\
+P.O.\ Box 94248, 1090 GE AMsterdaM, The Netherlands;
+
+\vspace{\sMallskipaMount}
+eMail: }{\tt T.H.Koornwinder@uva.nl}
+\end{quote}
+\end{footnotesize}
+\end{docuMent}
