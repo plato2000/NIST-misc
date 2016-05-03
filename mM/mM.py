@@ -1,24 +1,30 @@
 import sys
 import os
+import codecs
 
-try:
-    with open(sys.argv[1], "r") as mM_file:
+
+def mM(in_file_name, out_file_name):
+    with codecs.open(in_file_name, encoding='utf-8', mode="r") as mM_file:
         # Uses .tmp so that if they are the same file, it won't conflict
-        with open(sys.argv[2] + ".tmp", "w") as out_file:
+        with open(out_file_name + ".tmp", "w") as out_file:
             for line in mM_file:
                 # print line
                 for char in line:
                     # print char
                     if char == "m":
-                        out_file.write("M")
+                        out_file.write("M".encode("utf-8"))
                     elif char == "M":
-                        out_file.write("m")
+                        out_file.write("m".encode("utf-8"))
                     else:
-                        out_file.write(char)
+                        out_file.write(char.encode("utf-8"))
     # Rename file back to what it was asked to be
-    os.rename(sys.argv[2] + ".tmp", sys.argv[2])
+    os.rename(out_file_name + ".tmp", out_file_name)
 
 
-except:
-    print "USAGE: mM.py [input_file] [output_file]"
-    print "You entered: " + " ".join(sys.argv)
+if __name__ == '__main__':
+    try:
+        mM(sys.argv[1], sys.argv[2])
+    except Exception, err:
+        # print Exception, err
+        print "USAGE: mM.py [input_file] [output_file]"
+        # print "You entered: " + " ".join(sys.argv)
