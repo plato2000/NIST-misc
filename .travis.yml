@@ -5,5 +5,5 @@ python:
 # maintainers to fix their pypy-dev package.
 # command to run tests
 script:
-  - "python src/mM/mM_tests.py" 
+  - "python src/mM/mM_test.py" 
 
