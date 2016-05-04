@@ -1,4 +1,5 @@
 # NIST-misc
+[![Build Status](https://travis-ci.org/plato2000/NIST-misc.svg?branch=master)](https://travis-ci.org/plato2000/NIST-misc)
 Miscellaneous stuff from NIST internship (2016)
 As of now, this just contains the mM problem and its related unit tests.
 
